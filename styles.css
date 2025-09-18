@@ -240,7 +240,6 @@ body {
 
 .highlight {
     color: var(--secondary-teal);
-    animation: glow 3s ease-in-out infinite;
 }
 
 .robo-text {
@@ -716,7 +715,6 @@ section {
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
-    animation: pulse 0.6s ease-in-out;
 }
 
 .member-info h4 {
