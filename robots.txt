@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://robotedge-um.github.io/sitemap.xml
+
+# Disallow crawling of any potential temporary or private directories
+Disallow: /tmp/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow all crawlers to access the main content
+Allow: /assets/
+Allow: /styles.css
+Allow: /script.js
+Allow: /index.html
+
+# Crawl delay to be respectful to the server
+Crawl-delay: 1
