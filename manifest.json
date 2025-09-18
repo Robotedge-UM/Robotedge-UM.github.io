@@ -1,0 +1,28 @@
+{
+    "name": "Robotedge - AI Robotics Lab",
+    "short_name": "Robotedge",
+    "description": "AI Robotics Lab of Universiti Malaya specializing in service robotics and humanoid soccer",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1E4D72",
+    "theme_color": "#1E4D72",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/robotedge_logo_white_bg.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["education", "technology", "science"],
+    "lang": "en",
+    "scope": "/",
+    "related_applications": [],
+    "prefer_related_applications": false
+}
