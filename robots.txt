@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://robotedge-um.github.io/sitemap.xml
+
+# Allow search engines to crawl all content
+Crawl-delay: 1
+
+# Disallow nothing - allow full access to public content
