@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotedge - AI Robotic Club | University of Malaya</title>
     <meta name="description" content="Robotedge is an innovative AI robotic club at the University of Malaya, founded by Dr. Zati Hakim Binti Azizul Hasan from the Department of Artificial Intelligence.">
-    <!-- <link rel="icon" type="image/svg" href="assets/favicon.svg">-->
-     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"> 
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -17,23 +16,25 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="assets/robotedge_logo_white_bg.png" alt="Robotedge Logo" class="logo">
-                <!-- <span class="logo-text"></span> -->
             </div>
             <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
                 <li class="nav-item">
                     <a href="#about" class="nav-link">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#research" class="nav-link">Research & Publications</a>
+                    <a href="#robocup" class="nav-link">RoboCup</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#news" class="nav-link">News</a>
+                    <a href="#research" class="nav-link">Research</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#achievements" class="nav-link">Achievements</a>
+                    <a href="#publications" class="nav-link">Publications</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact Us</a>
+                    <a href="#industrial" class="nav-link">Industrial Applications</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -48,15 +49,28 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to <span class="highlight"><span class="robo-text">Robo</span><span class="tedge-text">tedge</span></span></h1>
-                <p class="hero-subtitle">Pioneering the Future of AI and Robotics at University of Malaya</p>
+                <h1 class="hero-title">Welcome to <span class="highlight"><span class="robo-text">ROBO</span><span class="tedge-text">TEDGE</span></span></h1>
+                <p class="hero-subtitle">AI Robotics Lab • RoboCup Champions • Universiti Malaya</p>
                 <p class="hero-description">
-                    An innovative AI robotic club dedicated to advancing robotics research, education, and innovation.
-                    Join us in shaping the future of artificial intelligence and robotics technology.
+                    Led by Dr. Zati Hakim Azizul Hasan, Robotedge is Malaysia's premier AI robotics lab specializing in service robotics and humanoid soccer. From our breakthrough at RoboCup Thailand 2022 to representing Malaysia at international competitions, we advance ethical robotics guided by our EDGE principles: Ethics, Diversity, Green technology, and Engagement with society.
                 </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Competition Awards</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">First Place Wins</span>
+                    </div>
+                </div>
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">Learn More</a>
-                    <a href="#contact" class="btn btn-secondary">Join Us</a>
+                    <a href="#robocup" class="btn btn-secondary">View Achievements</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -108,274 +122,411 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Robotedge</h2>
-                <p class="section-subtitle">Innovative AI Robotic Club at University of Malaya</p>
+                <p class="section-subtitle">AI Robotics Lab of Universiti Malaya</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Mission</h3>
+            
+            <!-- Introduction -->
+            <div class="about-intro">
+                <div class="intro-content">
+                    <h3>Introduction</h3>
                     <p>
-                        Robotedge is dedicated to fostering innovation in artificial intelligence and robotics. 
-                        We provide a collaborative platform for students, researchers, and enthusiasts to explore 
-                        cutting-edge technologies and develop solutions that address real-world challenges.
+                        Robotedge is the AI Robotics Lab of Universiti Malaya, bringing together students from Artificial Intelligence and Mechanical Engineering to explore the frontiers of service robotics. The lab was initiated by Dr Zati Hakim Azizul Hasan, whose leadership has been instrumental to its growth and development.
                     </p>
-                    <h3>Founded by Excellence</h3>
-                    <div class="founder-info">
-                        <div class="founder-details">
-                            <h4>Dr. Zati Hakim Binti Azizul Hasan</h4>
-                            <p class="founder-title">Senior Lecturer</p>
-                            <p class="founder-dept">Department of Artificial Intelligence</p>
-                            <p class="founder-faculty">Faculty of Computer Science and Information Technology</p>
-                            <p class="founder-uni">University of Malaya</p>
+                    <p>
+                        More than just a competition team, Robotedge serves as a platform for interdisciplinary collaboration, where students combine expertise in software, hardware, and systems integration to build robots that make a real-world impact. Our mission is to advance ethical and sustainable robotics, guided by the principles of EDGE:
+                    </p>
+                    <div class="edge-principles">
+                        <div class="principle">
+                            <strong>E</strong> - Ethics
+                        </div>
+                        <div class="principle">
+                            <strong>D</strong> - Diversity
+                        </div>
+                        <div class="principle">
+                            <strong>G</strong> - Green technology
+                        </div>
+                        <div class="principle">
+                            <strong>E</strong> - Engagement with society
+                        </div>
+                    </div>
+                    <p>
+                        Through research and development in speech recognition, computer vision, robotic manipulation, navigation, and human-robot interaction, we aim to design robots that support people in their daily lives while making a positive contribution to society. Beyond research, Robotedge is committed to education and outreach. We actively engage students and the wider community in AI and robotics, raising awareness through workshops, STEM exhibitions, and public demonstrations. By cultivating curiosity and skills at an early stage, we aspire to nurture the next generation of innovators who will drive Malaysia's future in robotics and artificial intelligence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div class="about-history">
+                <h3>History</h3>
+                <p>
+                    Robotedge has grown from a small team of AI students into a dynamic, interdisciplinary robotics lab, building both technical expertise and a strong culture of innovation. Our journey can be traced through key milestones:
+                </p>
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h4>First Steps into RoboCup</h4>
+                            <p>Robotedge made its debut at RoboCup@Home Edu in Bangkok, developing intelligent modules for speech recognition, visual perception, and navigation. With these efforts, the team secured second place, marking an important turning point in our commitment to open-source robotics platforms such as ROS.</p>
+                            <div class="timeline-image">
+                                <img src="assets/team_2022_bangkok.jpg" alt="Team Robotedge at RoboCup@Home Edu, Bangkok 2022" style="width: 100%; max-width: 500px; margin-top: 10px;">
+                                <p><em>Team Robotedge at RoboCup@Home Edu, Bangkok 2022.<br>
+                                Upper row (left to right): Chia Jing Hui, Chong Zheng Shin, Loh Jin Hoong, Danial Mecja, Yee Li Yan<br>
+                                Lower row (left to right): Dr. Zati Hakim binti Azizul Hasan, Goh Yan Cheng, Lee Jing Hui, Chan Joey</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h4>Expanding Activities Beyond Competitions</h4>
+                            <p>Building on early successes, the team began exploring broader applications, including organising robots, receptionist robots, and robocars for computer vision demonstrations. Robotedge also became active in STEM outreach, engaging children and secondary school students through exhibitions and hands-on showcases to inspire future talent.</p>
+                            <div class="timeline-image">
+                                <img src="assets/stem_outreach_2023.jpg" alt="Students from the Robotedge AI Robotics Lab demonstrating robots' ability to children at a STEM outreach program" style="width: 100%; max-width: 500px; margin-top: 10px;">
+                                <p><em>Students from the Robotedge AI Robotics Lab demonstrating robots' ability to children at a STEM outreach program</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h4>Growing into an Interdisciplinary Team</h4>
+                            <p>Robotedge expanded to include students from Mechanical Engineering, creating a stronger foundation in both hardware and software development. This collaboration enabled the transition from software modules to integrated robotic systems. With MoveIt and robotic arms, the team successfully implemented pick-and-place modules and advanced manipulation tasks.</p>
+                            <p>At RoboCup Malaysia 2024, this progress translated into success: Universiti Malaya teams achieved first and second place in the @Home category, and another team earned second place in the @Home Edu category.</p>
+                            <div class="timeline-image">
+                                <img src="assets/um_robotedge_teams_2024.jpg" alt="UM Robotedge Teams at RoboCup Malaysia 2024" style="width: 100%; max-width: 500px; margin-top: 10px;">
+                                <p><em>UM Robotedge Teams at RoboCup Malaysia 2024</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h4>Representing Malaysia on the World Stage</h4>
+                            <p>In Perlis at RoboCup Malaysia 2025, Robotedge achieved a remarkable milestone by securing first place in the @Home category, further solidifying our position as a leading robotics team in Malaysia. Building on this momentum, the team has also been invited to join the World Humanoid Robot Games 2025. This marks the beginning of our journey into humanoid soccer competitions, expanding our focus beyond service robotics.</p>
+                            <div class="timeline-image">
+                                <img src="assets/robocup_malaysia_2025_perlis.jpg" alt="Robocup Malaysia 2025 Perlis Group Photo" style="width: 100%; max-width: 500px; margin-top: 10px;">
+                                <p><em>Robocup Malaysia 2025 Perlis Group Photo</em></p>
+                            </div>
+                            <div class="timeline-image">
+                                <img src="assets/world_humanoid_robot_games_2025.jpg" alt="Robotedge at World Humanoid Robot Games 2025" style="width: 100%; max-width: 500px; margin-top: 10px;">
+                                <p><em>Robotedge at World Humanoid Robot Games 2025</em></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-features">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
+            </div>
+
+            <!-- Team -->
+            <div class="about-team">
+                <h3>Team</h3>
+                
+                <!-- Academic Supervisors -->
+                <div class="team-section">
+                    <h4>Academic Supervisors</h4>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="assets/dr_zati_hakim.jpg" alt="Dr Zati Hakim binti Azizul Hasan" onerror="this.style.display='none'">
+                            </div>
+                            <div class="member-info">
+                                <h5>Dr Zati Hakim binti Azizul Hasan</h5>
+                                <p>Senior Lecturer in the Department of Artificial Intelligence, Faculty of Computer Science and Information Technology (FCSIT), University Malaya</p>
+                            </div>
                         </div>
-                        <h4>Advanced Robotics</h4>
-                        <p>Exploring cutting-edge robotic systems and autonomous technologies</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
+                </div>
+
+                <!-- Student Members -->
+                <div class="team-section">
+                    <h4>Student Members</h4>
+                    
+                    <!-- Postgraduates -->
+                    <div class="team-subsection">
+                        <h5>Postgraduates</h5>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/chia_jing_hui.jpg" alt="Chia Jing Hui" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Chia Jing Hui</h6>
+                                    <p>Master of Computer Science (Research)</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/maharaj_faawwaz.jpg" alt="Maharaj Faawwaz A Yusran" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Maharaj Faawwaz A Yusran</h6>
+                                    <p>Master of Computer Science (Research)</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>AI Research</h4>
-                        <p>Pioneering artificial intelligence research and machine learning applications</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
+
+                    <!-- Undergraduates -->
+                    <div class="team-subsection">
+                        <h5>Undergraduates</h5>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/muhammad_tareq.jpg" alt="Muhammad Tareq Adam bin Ellias" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Muhammad Tareq Adam bin Ellias</h6>
+                                    <p>Bachelor of Computer Science (Artificial Intelligence)</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/hong_dao_jing.jpg" alt="Hong Dao Jing" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Hong Dao Jing</h6>
+                                    <p>Bachelor of Computer Science (Artificial Intelligence)</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/lee_chin_hong.jpg" alt="Lee Chin Hong" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Lee Chin Hong</h6>
+                                    <p>Bachelor of Mechanical Engineering</p>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">
+                                    <img src="assets/tan_jia_pern.jpg" alt="Tan Jia Pern" onerror="this.style.display='none'">
+                                </div>
+                                <div class="member-info">
+                                    <h6>Tan Jia Pern</h6>
+                                    <p>Bachelor of Mechanical Engineering</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Collaboration</h4>
-                        <p>Building a community of innovators and researchers in AI and robotics</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Members -->
+            <div class="about-past-members">
+                <h3>Past Members</h3>
+                <p><em>Information about past members will be updated soon.</em></p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="about-contact">
+                <h3>Contact Us</h3>
+                <p>
+                    Robotedge welcomes any students, researchers, media, and industry partners. If you're interested in collaboration, sponsorship, or learning more about our work, please reach out to us using the contact details below:
+                </p>
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>umrobotedge@gmail.com<br>zati@um.edu.my</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p><em>Coming soon!</em></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Faculty of Computer Science and Information Technology<br>
+                            University of Malaya, 50603 Kuala Lumpur, Malaysia</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research & Publications Section -->
+    <!-- RoboCup Section -->
+    <section id="robocup" class="robocup">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">RoboCup Participations & Awards</h2>
+                <p class="section-subtitle">Excellence in Competitive Robotics</p>
+            </div>
+            
+            <!-- RoboCup Awards Table -->
+            <div class="awards-section">
+                <h3>RoboCup Awards</h3>
+                <div class="awards-table-container">
+                    <table class="awards-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Competition</th>
+                                <th>Category</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>2022</td>
+                                <td>RoboCup Thailand</td>
+                                <td>@Home</td>
+                                <td><span class="award-badge second">2nd Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2024</td>
+                                <td>RoboCup Malaysia</td>
+                                <td>@Home</td>
+                                <td><span class="award-badge first">1st Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2024</td>
+                                <td>RoboCup Malaysia</td>
+                                <td>@HomeEDU</td>
+                                <td><span class="award-badge first">1st Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2025</td>
+                                <td>RoboCup Malaysia</td>
+                                <td>@Home</td>
+                                <td><span class="award-badge first">1st Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2025</td>
+                                <td>RCAP Chongqing Invitational</td>
+                                <td>3v3 Humanoid Soccer</td>
+                                <td><span class="award-badge third">3rd Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2025</td>
+                                <td>RCAP Chongqing Invitational</td>
+                                <td>5v5 Humanoid Soccer</td>
+                                <td><span class="award-badge second">2nd Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2025</td>
+                                <td>RCAP Qingdao Invitational</td>
+                                <td>3v3 Humanoid Soccer</td>
+                                <td><span class="award-badge second">2nd Place</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>2025</td>
+                                <td>RCAP Qingdao Invitational</td>
+                                <td>5v5 Humanoid Soccer</td>
+                                <td><span class="award-badge second">2nd Place</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Students' Achievement Table -->
+            <div class="awards-section">
+                <h3>Students' Achievements</h3>
+                <div class="awards-table-container">
+                    <table class="awards-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Competition</th>
+                                <th>Category</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>2022</td>
+                                <td>2022 IEEE Malaysia Section Final Year Project Competition</td>
+                                <td>Track 15: Robotics and Automation</td>
+                                <td><span class="award-badge first">1st Place</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Competition Categories Overview -->
+            <div class="competition-details">
+                <h3>Competition Categories</h3>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fas fa-home"></i>
+                        <h4>@Home League</h4>
+                        <p>Service robots operating in domestic environments, performing household tasks and interacting with humans naturally.</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>@Home Education</h4>
+                        <p>Educational category focusing on fundamental robotics skills and knowledge development for emerging teams.</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-running"></i>
+                        <h4>Humanoid Soccer</h4>
+                        <p>Autonomous humanoid robots playing soccer, demonstrating advanced locomotion, perception, and coordination.</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-trophy"></i>
+                        <h4>RCAP Invitationals</h4>
+                        <p>Regional championships in Asia-Pacific region featuring the best teams in various RoboCup categories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Research Section -->
     <section id="research" class="research">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Research & Publications</h2>
+                <h2 class="section-title">Research</h2>
                 <p class="section-subtitle">Advancing Knowledge in AI and Robotics</p>
             </div>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3>Current Research Areas</h3>
-                    <ul>
-                        <li>Autonomous Navigation Systems</li>
-                        <li>Machine Learning in Robotics</li>
-                        <li>Human-Robot Interaction</li>
-                        <li>Computer Vision Applications</li>
-                        <li>Intelligent Control Systems</li>
-                    </ul>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Recent Publications</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <h4>AI-Driven Robotic Systems for Healthcare</h4>
-                            <p>International Journal of Robotics Research, 2024</p>
-                        </div>
-                        <div class="publication-item">
-                            <h4>Advanced Machine Learning in Autonomous Vehicles</h4>
-                            <p>IEEE Transactions on Robotics, 2024</p>
-                        </div>
-                        <div class="publication-item">
-                            <h4>Human-Robot Collaboration in Industrial Settings</h4>
-                            <p>Robotics and Autonomous Systems, 2023</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3>Ongoing Projects</h3>
-                    <ul>
-                        <li>Smart Campus Navigation Robot</li>
-                        <li>AI-Powered Agricultural Drones</li>
-                        <li>Medical Assistance Robotics</li>
-                        <li>Educational Robotics Platform</li>
-                    </ul>
+            <div class="placeholder-content">
+                <div class="placeholder-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Research Areas</h3>
+                    <p>Content coming soon. Our research spans across various domains in AI and robotics.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="news">
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Latest News</h2>
-                <p class="section-subtitle">Stay Updated with Our Recent Activities</p>
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Our Contributions to Scientific Literature</p>
             </div>
-            <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-date">
-                        <span class="month">Aug</span>
-                        <span class="day">17</span>
-                        <span class="year">2025</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>🏆 Champion of RoboCup Malaysia Open 2025 (@Home League)</h3>
-                        <p>Representing University of Malaya (UM), our 6-member team Robotedge competed in the @Home League at RoboCup Malaysia Open 2025, hosted at UniMAP, Perlis from 14–17 August, where robots are challenged to perform everyday household tasks.</p>
-                        <p><strong>Team Members:</strong> Maharaj Fawwaz A. Yusran, Muhammad Tareq Adam, Chai Yu Jia, Loh Ming Yi, Winnie Cheng, Pang Sze Wen</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">
-                        <span class="month">Sep</span>
-                        <span class="day">15</span>
-                        <span class="year">2025</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Robotedge Club Officially Launched</h3>
-                        <p>We are excited to announce the official launch of Robotedge, the newest AI and robotics club at the University of Malaya. Join us in our mission to advance robotics research and education.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">
-                        <span class="month">Sep</span>
-                        <span class="day">10</span>
-                        <span class="year">2025</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>First Workshop: Introduction to AI in Robotics</h3>
-                        <p>Our inaugural workshop will cover the fundamentals of artificial intelligence applications in robotics. Open to all students interested in exploring this exciting field.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">
-                        <span class="month">Aug</span>
-                        <span class="day">28</span>
-                        <span class="year">2025</span>
-                    </div>
-                    <div class="news-content">
-                        <h3>Partnership with Local Tech Companies</h3>
-                        <p>Robotedge has established partnerships with leading technology companies to provide internship opportunities and real-world project collaborations for our members.</p>
-                        <a href="#" class="read-more">Read More</a>
-                    </div>
-                </article>
+            <div class="placeholder-content">
+                <div class="placeholder-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Academic Publications</h3>
+                    <p>Our publications and research papers will be featured here soon.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
+    <!-- Industrial Applications Section -->
+    <section id="industrial" class="industrial">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Achievements</h2>
-                <p class="section-subtitle">Celebrating Excellence in AI and Robotics</p>
+                <h2 class="section-title">Industrial Applications</h2>
+                <p class="section-subtitle">Bridging Research and Real-World Solutions</p>
             </div>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="achievement-number">50+</div>
-                    <h3>Active Members</h3>
-                    <p>Growing community of passionate AI and robotics enthusiasts</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="achievement-number">5</div>
-                    <h3>Research Projects</h3>
-                    <p>Ongoing innovative research projects in various AI domains</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="achievement-number">10+</div>
-                    <h3>Workshops</h3>
-                    <p>Educational workshops and training sessions conducted</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <div class="achievement-number">3</div>
-                    <h3>Industry Partners</h3>
-                    <p>Strategic partnerships with leading technology companies</p>
+            <div class="placeholder-content">
+                <div class="placeholder-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Industry Partnerships</h3>
+                    <p>Information about our industrial collaborations and applications will be updated here.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Join Our Community or Collaborate With Us</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Location</h3>
-                    <p>Faculty of Computer Science and Information Technology<br>
-                    University of Malaya<br>
-                    50603 Kuala Lumpur, Malaysia</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>robotedge@um.edu.my</p>
-                    <a href="mailto:robotedge@um.edu.my" class="contact-btn">Send Email</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <p>+60 3-7967 4000</p>
-                    <a href="tel:+60379674000" class="contact-btn">Call Now</a>
-                </div>
-            </div>
-            <div class="social-section">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-link">
-                        <i class="fab fa-facebook"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                        <span>Twitter</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -392,8 +543,10 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="#robocup">RoboCup</a></li>
                         <li><a href="#research">Research</a></li>
-                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#industrial">Industrial Applications</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

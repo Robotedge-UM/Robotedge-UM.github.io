@@ -3,7 +3,6 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navbar = document.querySelector('.navbar');
-const contactForm = document.getElementById('contactForm');
 
 // Image Gallery Functionality
 let currentSlide = 0;
@@ -95,53 +94,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Particle Animation for Hero Section
-function createParticles() {
-    const hero = document.querySelector('.hero');
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 4 + 1}px;
-            height: ${Math.random() * 4 + 1}px;
-            background: rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2});
-            border-radius: 50%;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-            pointer-events: none;
-            animation: floatParticle ${Math.random() * 20 + 10}s linear infinite;
-            animation-delay: ${Math.random() * 20}s;
-        `;
-        hero.appendChild(particle);
-    }
-}
-
-// CSS animation for particles (add to CSS)
-const particleCSS = `
-    @keyframes floatParticle {
-        0% {
-            transform: translateY(100vh) rotate(0deg);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) rotate(360deg);
-            opacity: 0;
-        }
-    }
-`;
-
-const style = document.createElement('style');
-style.textContent = particleCSS;
-document.head.appendChild(style);
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -196,109 +148,10 @@ const observer = new IntersectionObserver((entries) => {
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
-        '.feature-card, .research-card, .news-card, .achievement-card, .contact-item'
+        '.feature-card, .research-card, .contact-item, .application-card, .publication-category'
     );
     animatedElements.forEach(el => observer.observe(el));
 });
-
-// Counter animation for achievements
-function animateCounters() {
-    const counters = document.querySelectorAll('.achievement-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/\D/g, ''));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            
-            // Preserve the + sign if it exists
-            const hasPlus = counter.textContent.includes('+');
-            counter.textContent = Math.floor(current) + (hasPlus ? '+' : '');
-        }, 16);
-    });
-}
-
-// Trigger counter animation when achievements section is visible
-const achievementsSection = document.querySelector('#achievements');
-if (achievementsSection) {
-    const achievementsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                achievementsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    achievementsObserver.observe(achievementsSection);
-}
-
-// Contact Form Handling
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Simple validation
-        const requiredFields = ['name', 'email', 'subject', 'message'];
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            const input = contactForm.querySelector(`[name="${field}"]`);
-            if (!formObject[field].trim()) {
-                input.style.borderColor = '#dc3545';
-                isValid = false;
-            } else {
-                input.style.borderColor = '#00bcd4';
-            }
-        });
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const emailInput = contactForm.querySelector('[name="email"]');
-        if (!emailRegex.test(formObject.email)) {
-            emailInput.style.borderColor = '#dc3545';
-            isValid = false;
-        }
-        
-        if (isValid) {
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-                contactForm.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // Reset border colors
-                requiredFields.forEach(field => {
-                    const input = contactForm.querySelector(`[name="${field}"]`);
-                    input.style.borderColor = '#e9ecef';
-                });
-            }, 2000);
-        } else {
-            showNotification('Please fill in all required fields correctly.', 'error');
-        }
-    });
-}
 
 // Notification system
 function showNotification(message, type = 'info') {
