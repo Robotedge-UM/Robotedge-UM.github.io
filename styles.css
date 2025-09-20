@@ -705,25 +705,83 @@ body {
     }
     
     .nav-container {
-        padding: 20px;
+        padding: 10px 20px;
         gap: 20px;
+        height: 60px;
+    }
+    
+    .navbar {
+        height: 60px;
+    }
+    
+    .nav-logo .logo {
+        width: 160px;
+        height: 34px;
     }
     
     .nav-menu {
         display: none;
     }
     
+    /* Hero Section Mobile */
+    .hero-section {
+        height: 100vh;
+        min-height: 100vh;
+        margin-top: 0;
+        overflow: hidden;
+    }
+    
+    .hero-background {
+        height: 100%;
+    }
+    
+    .hero-overlay,
+    .hero-overlay-2,
+    .hero-overlay-3 {
+        width: 100%;
+        left: 0;
+        transform: none;
+        height: 100%;
+    }
+    
     .hero-content {
         width: 100%;
         margin-left: 0;
-        padding: 0 20px;
+        padding: 60px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        box-sizing: border-box;
     }
     
     .hero-title {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 20px;
     }
     
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    /* About Section Mobile */
     .about-content {
         flex-direction: column;
         padding: 32px 20px;
@@ -732,16 +790,58 @@ body {
     
     .about-image {
         width: 100%;
-        height: 300px;
+        height: 250px;
+    }
+    
+    .about-text {
+        width: 100%;
+    }
+    
+    .section-header {
+        width: 100% !important;
+    }
+    
+    .section-bg-title {
+        font-size: 60px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .section-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    /* Research Section Mobile */
+    .research-section {
+        padding: 40px 0;
+    }
+    
+    .research-section .container {
+        gap: 30px;
     }
     
     .research-row {
         flex-direction: column;
+        gap: 20px;
     }
     
     .research-card,
     .research-card.large {
         width: 100%;
+        height: 200px;
+    }
+    
+    .research-overlay h3 {
+        font-size: 18px;
+    }
+    
+    /* Highlights Section Mobile */
+    .highlights-section {
+        padding: 40px 0;
     }
     
     .highlights-content {
@@ -749,21 +849,70 @@ body {
         width: 100%;
         height: auto;
         padding: 20px;
+        gap: 30px;
+    }
+    
+    .highlights-text {
+        width: 100%;
+        text-align: center;
     }
     
     .highlights-image {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
     }
     
+    .highlights-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .stat-item {
+        text-align: center;
+    }
+    
+    /* Footer Mobile */
     .footer-content {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
+        padding: 40px 20px;
     }
     
     .footer-brand,
     .footer-contact,
     .footer-map {
         width: 100%;
+        text-align: center;
+    }
+    
+    .footer-map iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 42px;
+        line-height: 1.2;
+    }
+    
+    .hero-content {
+        width: 70%;
+        margin-left: calc(50% - 70%/2 - 200px);
+    }
+    
+    .research-row {
+        gap: 20px;
+    }
+    
+    .research-card:not(.large) {
+        width: calc(50% - 10px);
     }
 }
