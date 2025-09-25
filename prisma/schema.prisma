@@ -1,0 +1,332 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id            String       @id @default(cuid())
+  activityType  ActivityType
+  title         String
+  description   String
+  amount        Float?
+  seen          Boolean      @default(false)
+  userId        String
+  user          User         @relation("UserActivities", fields: [userId], references: [id], onDelete: Cascade)
+  createdAt     DateTime     @default(now())
+}
+
+model User {
+  id               String       @id @default(cuid())
+  name             String
+  email            String       @unique
+  password         String
+  phoneNumber      String?
+  address          String?
+  city             String?
+  country          String?
+  role             Role         @default(USER)
+  isActive         Boolean      @default(true)
+  registrationTime DateTime?
+  
+  // Profile information for portfolio website
+  bio              String?
+  profileImage     String?
+  website          String?
+  github           String?
+  linkedin         String?
+  
+  activities        Activity[]         @relation("UserActivities")
+  
+  // Support Ticket Relations (kept for future use)
+  submittedTickets SupportTicket[] @relation("TicketSubmitter")
+  assignedTickets  SupportTicket[] @relation("TicketAssignee")
+  ticketReplies    TicketReply[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPERADMIN
+}
+
+enum ActivityType {
+  REGISTRATION
+  ACCOUNT_UPDATED
+  LOGIN
+  TICKET_CREATED
+  TICKET_UPDATED
+  TICKET_RESOLVED
+  ADMIN_ACTION
+  PROFILE_UPDATED
+  PORTFOLIO_UPDATED
+}
+
+// Support Ticket System Models (kept for future use)
+enum TicketCategory {
+  ACCOUNT_ACCESS
+  SYSTEM_SUPPORT
+  GENERAL_INQUIRIES
+  PORTFOLIO_HELP
+}
+
+enum TicketPriority {
+  CRITICAL // 2-hour initial response
+  HIGH // 6-hour initial response
+  MEDIUM // 12-hour initial response
+  LOW // 24-hour initial response
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  AWAITING_USER_RESPONSE
+  ESCALATED
+  RESOLVED
+  CLOSED
+}
+
+enum SupportTier {
+  TIER_1 // Front-line support
+  TIER_2 // Technical specialists
+  TIER_3 // Developer team
+}
+
+model SupportTicket {
+  id          String         @id @default(cuid())
+  title       String
+  description String
+  category    TicketCategory
+  priority    TicketPriority
+  status      TicketStatus   @default(OPEN)
+  tier        SupportTier    @default(TIER_1)
+
+  // Attachments as JSON array of URLs
+  attachments String[] @default([])
+
+  // Relations
+  submitterId String
+  submitter   User    @relation("TicketSubmitter", fields: [submitterId], references: [id], onDelete: Cascade)
+  assigneeId  String?
+  assignee    User?   @relation("TicketAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
+
+  // Support workflow tracking
+  initialResponseTime DateTime?
+  resolutionTime      DateTime?
+  lastUpdated         DateTime  @updatedAt
+
+  // Knowledge base article created from this ticket
+  knowledgeBaseId String?
+  knowledgeBase   KnowledgeBaseArticle? @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  // Ticket thread
+  replies TicketReply[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TicketReply {
+  id          String   @id @default(cuid())
+  content     String
+  attachments String[] @default([])
+  isInternal  Boolean  @default(false) // For staff notes that users can't see
+
+  // Relations
+  ticketId String
+  ticket   SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  userId   String
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model KnowledgeBaseArticle {
+  id          String         @id @default(cuid())
+  title       String
+  content     String
+  category    TicketCategory
+  tags        String[]       @default([])
+  isPublished Boolean        @default(true)
+  viewCount   Int            @default(0)
+
+  // Related tickets
+  relatedTickets SupportTicket[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SupportSettings {
+  id String @id @default(cuid())
+
+  // Response time targets (in hours)
+  criticalResponseTarget Float @default(2)
+  highResponseTarget     Float @default(6)
+  mediumResponseTarget   Float @default(12)
+  lowResponseTarget      Float @default(24)
+
+  // Auto-escalation settings (in hours)
+  autoEscalateAfter Float @default(24) // Escalate if no response after X hours
+
+  // Auto-assignment settings
+  enableAutoAssignment Boolean @default(true)
+
+  // Knowledge base settings
+  autoSuggestKnowledgeBase Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// System Configuration Models
+model SystemConfig {
+  id              String  @id @default(cuid())
+  key             String  @unique
+  value           String
+  description     String?
+  category        String? // 'auth', 'general', etc.
+  isActive        Boolean @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// Landing Page Customization Models (adapted for Robotedge)
+model LandingPageSettings {
+  id String @id @default(cuid())
+  
+  // Company branding
+  companyName        String  @default("Robotedge")
+  companyLogo        String? // URL to logo image
+  primaryColor       String  @default("#1E4D72") // Robotedge blue
+  secondaryColor     String  @default("#00BCD4") // Robotedge teal
+  
+  // Hero section
+  heroTitle          String  @default("Welcome to Robotedge")
+  heroSubtitle       String  @default("AI Robotics Lab of Universiti Malaya")
+  heroDescription    String  @default("Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and humanoid soccer, advancing ethical robotics guided by our EDGE principles: Ethics, Diversity, Green technology, and Engagement with society.")
+  heroImage          String? // URL to hero image/video
+  
+  // Statistics
+  activeMembersCount String  @default("20+")
+  totalAchievements  String  @default("5+")
+  memberSatisfaction String  @default("100%")
+  
+  // Contact information
+  contactEmail       String  @default("umrobotedge@gmail.com")
+  contactPhone       String?
+  supportEmail       String  @default("umrobotedge@gmail.com")
+  
+  // Social media links
+  facebookUrl        String?
+  twitterUrl         String?
+  linkedinUrl        String?
+  instagramUrl       String?
+  
+  // SEO settings
+  metaTitle          String  @default("Robotedge - AI Robotics Lab | University of Malaya")
+  metaDescription    String  @default("Robotedge AI Robotics Lab at University of Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.")
+  
+  isActive           Boolean @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model LandingPageContent {
+  id          String           @id @default(cuid())
+  page        LandingPageType  // HOME, ABOUT, ROBOCUP, RESEARCH, etc.
+  section     String           // e.g., "hero", "about", "robocup", "research"
+  title       String?
+  subtitle    String?
+  content     String?          // JSON or HTML content
+  imageUrl    String?
+  order       Int              @default(0) // For ordering sections
+  isActive    Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  
+  @@unique([page, section])
+}
+
+enum LandingPageType {
+  HOME
+  ABOUT
+  ROBOCUP
+  RESEARCH
+  PUBLICATIONS
+  INDUSTRIAL
+}
+
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String
+  answer      String   // Can contain HTML
+  category    String?  @default("General")
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Portfolio Models (for future portfolio functionality)
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  content     String?  // Detailed description in markdown
+  imageUrl    String?
+  demoUrl     String?
+  githubUrl   String?
+  tags        String[] @default([])
+  category    String?  // "RoboCup", "Research", "Academic", etc.
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Publication {
+  id          String   @id @default(cuid())
+  title       String
+  authors     String[] @default([])
+  journal     String?
+  conference  String?
+  year        Int
+  abstract    String?
+  pdfUrl      String?
+  doi         String?
+  tags        String[] @default([])
+  category    String?  // "Journal", "Conference", "Workshop", etc.
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  role        String   // "Academic Supervisor", "PhD Student", "Master Student", etc.
+  email       String?
+  bio         String?
+  imageUrl    String?
+  linkedinUrl String?
+  githubUrl   String?
+  website     String?
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

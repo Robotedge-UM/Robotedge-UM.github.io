@@ -1,0 +1,3 @@
+pnpm dlx prettier -w .
+git add .
+pnpm lint
