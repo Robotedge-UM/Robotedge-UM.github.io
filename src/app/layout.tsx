@@ -4,7 +4,7 @@ import "./globals.css"
 import { RootContent } from "@/components/layouts/root-content"
 import { ThemeProvider } from "@/components/providers/dynamic-theme-provider"
 import { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Poppins } from "next/font/google"
 import { ToastContainer } from "react-toastify"
 
 export const metadata: Metadata = {
@@ -77,7 +77,11 @@ export const metadata: Metadata = {
   },
 }
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+})
 
 export default function RootLayout({
   children,
@@ -91,7 +95,7 @@ export default function RootLayout({
       className="h-full"
     >
       <body
-        className={`${inter.className} h-full bg-background text-foreground antialiased`}
+        className={`${poppins.className} h-full bg-background text-foreground antialiased`}
       >
         <ThemeProvider>
           <ToastContainer

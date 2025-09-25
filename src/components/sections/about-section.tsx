@@ -45,10 +45,10 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 bg-white"
+      className="relative py-16 overflow-hidden bg-white md:py-24"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative px-6 mx-auto max-w-7xl lg:px-8">
+        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image Section */}
           <div className="relative">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
@@ -60,73 +60,63 @@ export function AboutSection() {
                   className="object-cover"
                 />
               ) : (
-                <div className="bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center h-full">
-                  <div className="text-center text-gray-500">
-                    <div className="text-6xl mb-4">🤖</div>
+                <div className="flex items-center justify-center h-full bg-gradient-to-br from-blue-50 to-teal-50">
+                  <div className="text-center text-gray-400">
+                    <div className="mb-4 text-6xl">🤖</div>
                     <p>About Image</p>
                   </div>
                 </div>
               )}
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-teal-100 rounded-full opacity-50" />
-            <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-full opacity-50" />
           </div>
 
           {/* Content Section */}
-          <div className="space-y-8">
+          <div className="relative space-y-8">
+            {/* Large faded background text positioned behind the title */}
+            <div className="absolute z-0 pointer-events-none -top-8">
+              <div className="font-bold leading-none text-gray-100 select-none text-7xl lg:text-8xl ">
+                {aboutData.title}
+              </div>
+            </div>
             {!isLoading ? (
               <>
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <div className="relative z-10 space-y-6">
+                  <h2 className="relative z-10 mb-2 text-5xl font-bold text-gray-900 lg:text-6xl">
                     {aboutData.title}
                   </h2>
-                  <div className="w-12 h-1 bg-teal-500 mb-6" />
-                </div>
 
-                <div className="space-y-6">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {aboutData.content}
-                  </p>
-                </div>
+                  <div className="space-y-6">
+                    <p className="text-base leading-relaxed text-gray-700 md:text-lg">
+                      {aboutData.content}
+                    </p>
+                  </div>
 
-                <div className="pt-4">
-                  <button
-                    onClick={() =>
-                      document
-                        .getElementById("research")
-                        ?.scrollIntoView({ behavior: "smooth" })
-                    }
-                    className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
-                  >
-                    Know More
-                    <svg
-                      className="ml-2 w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="pt-2">
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("research")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
+                      Know More
+                    </button>
+                  </div>
                 </div>
               </>
             ) : (
               <div className="space-y-6">
-                <div className="h-12 bg-gray-200 rounded-lg animate-pulse" />
-                <div className="w-12 h-1 bg-gray-200 rounded animate-pulse" />
+                <div className="space-y-4">
+                  <div className="h-12 bg-gray-200 rounded-lg animate-pulse" />
+                  <div className="w-2/3 h-6 bg-gray-200 rounded animate-pulse" />
+                </div>
                 <div className="space-y-4">
                   <div className="h-6 bg-gray-200 rounded animate-pulse" />
                   <div className="h-6 bg-gray-200 rounded animate-pulse" />
-                  <div className="h-6 bg-gray-200 rounded w-3/4 animate-pulse" />
+                  <div className="w-3/4 h-6 bg-gray-200 rounded animate-pulse" />
                 </div>
-                <div className="h-12 w-32 bg-gray-200 rounded-lg animate-pulse" />
+                <div className="w-32 h-12 bg-gray-200 rounded-lg animate-pulse" />
               </div>
             )}
           </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { HomeSectionType } from "@prisma/client"
+import Image from "next/image"
 
 interface HeroData {
   title?: string
@@ -49,7 +50,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[800px] lg:min-h-[900px] overflow-hidden"
+      className="relative xl:min-h-[900px] overflow-hidden lg:flex items-center lg:pt-16 xl:pt-20"
       style={{
         backgroundImage: `url(${heroData.imageUrl})`,
         backgroundSize: "cover",
@@ -62,24 +63,25 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent via-50% to-transparent"></div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
+        <div className="w-full px-6 py-20 mx-auto max-w-7xl lg:px-8">
           <div className="grid grid-cols-12 gap-8 items-center min-h-[600px]">
             {/* Left Content - Text (centered and positioned better) */}
-            <div className="col-span-12 lg:col-span-6 xl:col-span-5 space-y-6 flex flex-col justify-center">
+            <div className="flex flex-col justify-center col-span-12 space-y-6 lg:col-span-6">
               {!isLoading && (
                 <>
                   {/* Main Title - Smaller size */}
                   <div className="space-y-3">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[0.9] tracking-tight">
-                      <span className="block">"BUILDING ROBOTS</span>
-                      <span className="block">WITH EDGE –</span>
+                    <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white tracking-tight">
+                      <span className="block">
+                        "BUILDING ROBOTS WITH EDGE –
+                      </span>
                     </h1>
                   </div>
 
                   {/* EDGE Subtitle */}
                   <div className="space-y-1">
-                    <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-light leading-tight tracking-wider">
+                    <h2 className="text-4xl font-bold leading-tighter tracking-wider md:text-5xl xl:text-6xl">
                       <span className="block text-teal-300">
                         ETHICS. DIVERSITY.
                       </span>
@@ -91,22 +93,28 @@ export function HeroSection() {
 
                   {/* Description */}
                   <div className="max-w-lg pt-2">
-                    <p className="text-sm md:text-base lg:text-lg text-white/95 leading-relaxed">
+                    <p className="text-sm leading-relaxed md:text-base lg:text-lg text-white/95">
                       {heroData.content}
                     </p>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <div className="flex flex-col gap-4 pt-4 sm:flex-row">
                     <button
                       onClick={() =>
                         document
                           .getElementById("research")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="group px-6 py-3 bg-purple-600/80 backdrop-blur-sm text-white border border-purple-400/50 rounded-full hover:bg-purple-500 hover:border-purple-300 transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white transition-all duration-300 border rounded-full group bg-purple-600/80 backdrop-blur-sm border-purple-400/50 hover:bg-purple-500 hover:border-purple-300"
                     >
-                      <span className="text-base">🔍</span>
+                      <Image
+                        src="/icons/start_circle.svg"
+                        alt="search icon"
+                        width={24}
+                        height={24}
+                        className="text-base"
+                      />
                       <span>Explore Research</span>
                     </button>
 
@@ -116,9 +124,15 @@ export function HeroSection() {
                           .getElementById("news-events")
                           ?.scrollIntoView({ behavior: "smooth" })
                       }
-                      className="group px-6 py-3 bg-transparent text-white border border-white/60 rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 text-sm font-medium flex items-center justify-center gap-2"
+                      className="flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white transition-all duration-300 bg-transparent border rounded-full group border-white/60 hover:bg-white/10 hover:border-white"
                     >
-                      <span className="text-base">▶</span>
+                      <Image
+                        src="/icons/octicon_play-24.svg"
+                        alt="search icon"
+                        width={24}
+                        height={24}
+                        className="text-base"
+                      />
                       <span>View Achievements</span>
                     </button>
                   </div>
@@ -128,29 +142,26 @@ export function HeroSection() {
               {isLoading && (
                 <div className="space-y-6">
                   <div className="space-y-4">
-                    <div className="h-12 bg-white/20 rounded-lg animate-pulse" />
-                    <div className="h-12 bg-white/20 rounded-lg animate-pulse" />
+                    <div className="h-12 rounded-lg bg-white/20 animate-pulse" />
+                    <div className="h-12 rounded-lg bg-white/20 animate-pulse" />
                   </div>
-                  <div className="h-8 bg-white/20 rounded-lg animate-pulse" />
-                  <div className="h-16 bg-white/20 rounded-lg animate-pulse" />
+                  <div className="h-8 rounded-lg bg-white/20 animate-pulse" />
+                  <div className="h-16 rounded-lg bg-white/20 animate-pulse" />
                   <div className="flex gap-4">
-                    <div className="h-10 w-32 bg-white/20 rounded-lg animate-pulse" />
-                    <div className="h-10 w-32 bg-white/20 rounded-lg animate-pulse" />
+                    <div className="w-32 h-10 rounded-lg bg-white/20 animate-pulse" />
+                    <div className="w-32 h-10 rounded-lg bg-white/20 animate-pulse" />
                   </div>
                 </div>
               )}
             </div>
 
             {/* Right side - Empty to let background image (team photo) show through clearly */}
-            <div className="hidden lg:block col-span-6 xl:col-span-7 relative">
+            <div className="relative hidden col-span-6 lg:block xl:col-span-7">
               {/* This space intentionally left for background image visibility */}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements matching the design */}
-      <div className="absolute bottom-24 left-8 w-8 h-1 bg-teal-400"></div>
     </section>
   )
 }
