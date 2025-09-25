@@ -1,0 +1,595 @@
+{
+  "$comment": "This is structural design data exported by the Figma Raw plugin. It is formatted to help LLMs (Large Language Models) understand design structures and components from Figma designs.",
+  "name": "Home",
+  "type": "FRAME",
+  "width": 1440,
+  "height": 3932,
+  "layoutMode": "VERTICAL",
+  "primaryAxisSizingMode": "FIXED",
+  "counterAxisSizingMode": "FIXED",
+  "primaryAxisAlignItems": "MIN",
+  "counterAxisAlignItems": "MIN",
+  "strokeWeight": 1,
+  "strokeAlign": "INSIDE",
+  "strokeCap": "NONE",
+  "strokeJoin": "MITER",
+  "children": [
+    {
+      "name": "Menu",
+      "type": "INSTANCE",
+      "componentProperties": {
+        "Property 1": {
+          "value": "Default",
+          "type": "VARIANT",
+          "displayValue": "Default"
+        }
+      },
+      "width": 1440,
+      "height": 76,
+      "layoutMode": "NONE",
+      "primaryAxisSizingMode": "FIXED",
+      "counterAxisSizingMode": "FIXED",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 20,
+      "paddingBottom": 20,
+      "itemSpacing": 247,
+      "fills": [
+        {
+          "type": "SOLID",
+          "opacity": 1,
+          "color": { "r": 1, "g": 1, "b": 1, "a": 1, "hex": "#ffffff" }
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "strokeCap": "NONE",
+      "strokeJoin": "MITER",
+      "mainComponent": { "name": "Property 1=Default" }
+    },
+    {
+      "name": "Frame 48097167",
+      "type": "FRAME",
+      "width": 1440,
+      "height": 3408,
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisSizingMode": "AUTO",
+      "counterAxisSizingMode": "AUTO",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 10,
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "strokeCap": "NONE",
+      "strokeJoin": "MITER",
+      "children": [
+        {
+          "name": "Frame 48097146",
+          "type": "FRAME",
+          "width": 1440,
+          "height": 3408,
+          "layoutMode": "VERTICAL",
+          "primaryAxisSizingMode": "FIXED",
+          "counterAxisSizingMode": "FIXED",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "strokeCap": "NONE",
+          "strokeJoin": "MITER",
+          "children": [
+            {
+              "name": "Frame 48097145",
+              "type": "FRAME",
+              "width": 1440,
+              "height": 806.27099609375,
+              "layoutMode": "VERTICAL",
+              "primaryAxisSizingMode": "AUTO",
+              "counterAxisSizingMode": "FIXED",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MAX",
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "strokeCap": "NONE",
+              "strokeJoin": "MITER",
+              "children": [
+                {
+                  "name": "Headline",
+                  "type": "GROUP",
+                  "width": 1439,
+                  "height": 806.27099609375,
+                  "children": [
+                    {
+                      "name": "Home Page - Background",
+                      "type": "INSTANCE",
+                      "componentProperties": {
+                        "Property 1": {
+                          "value": "Home Page - Background 1",
+                          "type": "VARIANT",
+                          "displayValue": "Home Page - Background 1"
+                        }
+                      },
+                      "width": 1438,
+                      "height": 806,
+                      "layoutMode": "NONE",
+                      "primaryAxisSizingMode": "AUTO",
+                      "counterAxisSizingMode": "FIXED",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER",
+                      "mainComponent": {
+                        "name": "Property 1=Home Page - Background 1"
+                      }
+                    },
+                    {
+                      "name": "Rectangle 20",
+                      "type": "VECTOR",
+                      "width": 893.3795776367188,
+                      "height": 806.27099609375,
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "opacity": 0.30000001192092896,
+                          "color": {
+                            "r": 0.003921568859368563,
+                            "g": 0.3490196168422699,
+                            "b": 0.7215686440467834,
+                            "a": 0.30000001192092896,
+                            "hex": "#0159b84d"
+                          }
+                        }
+                      ],
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Rectangle 21",
+                      "type": "VECTOR",
+                      "width": 850.409423828125,
+                      "height": 806.27099609375,
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "opacity": 0.30000001192092896,
+                          "color": {
+                            "r": 0,
+                            "g": 0.20392157137393951,
+                            "b": 0.7176470756530762,
+                            "a": 0.30000001192092896,
+                            "hex": "#0034b74d"
+                          }
+                        }
+                      ],
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Rectangle 22",
+                      "type": "VECTOR",
+                      "width": 801.4434204101562,
+                      "height": 806.27099609375,
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "opacity": 0.6000000238418579,
+                          "color": {
+                            "r": 0,
+                            "g": 0.07450980693101883,
+                            "b": 0.3490196168422699,
+                            "a": 0.6000000238418579,
+                            "hex": "#00135999"
+                          }
+                        }
+                      ],
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Frame 10",
+                      "type": "FRAME",
+                      "width": 381.14178466796875,
+                      "height": 544.5711669921875,
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisSizingMode": "FIXED",
+                      "counterAxisSizingMode": "FIXED",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "CENTER",
+                      "itemSpacing": 129,
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Line 1",
+                      "type": "LINE",
+                      "width": 30.645383834838867,
+                      "height": 0,
+                      "rotation": 0.000010236103401986441,
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "opacity": 1,
+                          "color": {
+                            "r": 0.07450980693101883,
+                            "g": 0.7411764860153198,
+                            "b": 0.7058823704719543,
+                            "a": 1,
+                            "hex": "#13bdb4"
+                          }
+                        }
+                      ],
+                      "strokeWeight": 4,
+                      "strokeAlign": "CENTER",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "About Us",
+              "type": "FRAME",
+              "width": 1440,
+              "height": 2602.294921875,
+              "layoutMode": "VERTICAL",
+              "primaryAxisSizingMode": "AUTO",
+              "counterAxisSizingMode": "FIXED",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 29,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "opacity": 1,
+                  "color": { "r": 1, "g": 1, "b": 1, "a": 1, "hex": "#ffffff" }
+                }
+              ],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "strokeCap": "NONE",
+              "strokeJoin": "MITER",
+              "children": [
+                {
+                  "name": "About Us",
+                  "type": "FRAME",
+                  "width": 1440,
+                  "height": 548,
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisSizingMode": "FIXED",
+                  "counterAxisSizingMode": "AUTO",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "paddingLeft": 96,
+                  "paddingRight": 96,
+                  "paddingTop": 64,
+                  "paddingBottom": 64,
+                  "itemSpacing": 56,
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "strokeCap": "NONE",
+                  "strokeJoin": "MITER",
+                  "children": [
+                    {
+                      "name": "Frame 48097094",
+                      "type": "FRAME",
+                      "width": 453,
+                      "height": 420,
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisSizingMode": "AUTO",
+                      "counterAxisSizingMode": "AUTO",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "itemSpacing": 54,
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Frame 48096132",
+                      "type": "FRAME",
+                      "width": 688,
+                      "height": 420,
+                      "layoutMode": "VERTICAL",
+                      "primaryAxisSizingMode": "FIXED",
+                      "counterAxisSizingMode": "AUTO",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "itemSpacing": 39,
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    }
+                  ]
+                },
+                {
+                  "name": "Research Areas",
+                  "type": "FRAME",
+                  "width": 1440,
+                  "height": 1204.72900390625,
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisSizingMode": "AUTO",
+                  "counterAxisSizingMode": "FIXED",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "paddingLeft": 96,
+                  "paddingRight": 96,
+                  "paddingTop": 64,
+                  "paddingBottom": 64,
+                  "itemSpacing": 48,
+                  "fills": [{ "type": "PATTERN", "opacity": 1 }],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "strokeCap": "NONE",
+                  "strokeJoin": "MITER",
+                  "children": [
+                    {
+                      "name": "Frame 48097092",
+                      "type": "FRAME",
+                      "width": 755,
+                      "height": 134,
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisSizingMode": "AUTO",
+                      "counterAxisSizingMode": "AUTO",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "paddingLeft": 10,
+                      "paddingRight": 10,
+                      "paddingTop": 10,
+                      "paddingBottom": 10,
+                      "itemSpacing": 10,
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Frame 48096133",
+                      "type": "FRAME",
+                      "width": 1240,
+                      "height": 894.72900390625,
+                      "layoutMode": "VERTICAL",
+                      "primaryAxisSizingMode": "AUTO",
+                      "counterAxisSizingMode": "AUTO",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "itemSpacing": 22,
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    }
+                  ]
+                },
+                {
+                  "name": "News & Events",
+                  "type": "FRAME",
+                  "width": 1440,
+                  "height": 791.5660400390625,
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisSizingMode": "AUTO",
+                  "counterAxisSizingMode": "FIXED",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingLeft": 96,
+                  "paddingRight": 96,
+                  "paddingTop": 46,
+                  "paddingBottom": 82,
+                  "itemSpacing": 61,
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "strokeCap": "NONE",
+                  "strokeJoin": "MITER",
+                  "children": [
+                    {
+                      "name": "Frame 48097096",
+                      "type": "FRAME",
+                      "width": 640,
+                      "height": 114,
+                      "layoutMode": "VERTICAL",
+                      "primaryAxisSizingMode": "AUTO",
+                      "counterAxisSizingMode": "AUTO",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "CENTER",
+                      "strokeWeight": 1,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    },
+                    {
+                      "name": "Highlights",
+                      "type": "GROUP",
+                      "width": 1294.7779541015625,
+                      "height": 411.295654296875
+                    },
+                    {
+                      "name": "Frame 48096128",
+                      "type": "FRAME",
+                      "width": 122.84130859375,
+                      "height": 16.27037239074707,
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisSizingMode": "FIXED",
+                      "counterAxisSizingMode": "FIXED",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "MIN",
+                      "itemSpacing": 13.016297340393066,
+                      "strokeWeight": 0.8135185837745667,
+                      "strokeAlign": "INSIDE",
+                      "strokeCap": "NONE",
+                      "strokeJoin": "MITER"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Footer",
+      "type": "INSTANCE",
+      "width": 1440,
+      "height": 452,
+      "layoutMode": "NONE",
+      "primaryAxisSizingMode": "AUTO",
+      "counterAxisSizingMode": "FIXED",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "fills": [
+        {
+          "type": "SOLID",
+          "opacity": 1,
+          "color": { "r": 1, "g": 1, "b": 1, "a": 1, "hex": "#ffffff" }
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "strokeCap": "NONE",
+      "strokeJoin": "MITER",
+      "mainComponent": { "name": "Footer" }
+    }
+  ],
+  "textContent": [
+    {
+      "name": "“Building Robots with Edge –",
+      "text": "“Building Robots with Edge – \n\n",
+      "path": "Home/Frame 48097167/Frame 48097146/Frame 48097145/Headline/Frame 10/Group 8/“Building Robots with Edge –",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Ethics. Diversity. Green. Engagement.”",
+      "text": "Ethics. Diversity. Green. Engagement.”",
+      "path": "Home/Frame 48097167/Frame 48097146/Frame 48097145/Headline/Frame 10/Group 8/Ethics. Diversity. Green. Engagement.”",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and integrating AI and robotics for competitions, research and industrial impact.",
+      "text": "Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and integrating AI and robotics for competitions, research and industrial impact.\n\r",
+      "path": "Home/Frame 48097167/Frame 48097146/Frame 48097145/Headline/Frame 10/Group 8/Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and integrating AI and robotics for competitions, research and industrial impact.",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "View Achievements",
+      "text": "View Achievements",
+      "path": "Home/Frame 48097167/Frame 48097146/Frame 48097145/Headline/Frame 10/Group 8/Frame 9/Group 6/View Achievements",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "About Us",
+      "text": "About Us",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/About Us/Frame 48096132/Frame 48097128/Frame 48097127/Frame 48097129/About Us",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Heading",
+      "text": "About Us",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/About Us/Frame 48096132/Frame 48097128/Frame 48097127/Frame 48097129/Heading",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Text",
+      "text": "Robotedge is the AI Robotics Lab of Universiti Malaya, bringing together students from Artificial Intelligence and Mechanical Engineering to explore the frontiers of service robotics. The lab was initiated by Dr Zati Hakim Azizul Hasan, whose leadership has been instrumental to its growth and development.",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/About Us/Frame 48096132/Frame 48097128/Frame 48097127/Text",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Know More",
+      "text": "Know More",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/About Us/Frame 48096132/Frame 48097128/Frame 48096116/Know More",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Research Areas",
+      "text": "Research Areas",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48097092/Research Areas",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Research Areas",
+      "text": "Research Areas",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48097092/Research Areas",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "SLAM",
+      "text": "Path Planning",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15556/Group 48096108/SLAM",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Drone",
+      "text": "Search and Rescue",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15556/Group 48096109/Drone",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Drone",
+      "text": "Healthcare",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15556/Group 48096110/Drone",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Social & Service",
+      "text": "Social & Service",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15557/Group 48096110/Social & Service",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Water & Environmental ",
+      "text": "Water & Environmental ",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15557/Group 48096111/Water & Environmental ",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Perception (Fundamental vision + Machine Learning)",
+      "text": "Perception \n(Fundamental vision \n+ Machine Learning)",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/Research Areas/Frame 48096133/Frame 15559/Frame 15557/Group 48096112/Perception (Fundamental vision + Machine Learning)",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Highlights",
+      "text": "Highlights",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/News & Events/Frame 48097096/Frame 48097095/Highlights",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "Highlights",
+      "text": "Highlights",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/News & Events/Frame 48097096/Frame 48097095/Highlights",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "23 August 2025",
+      "text": "23 August 2025",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/News & Events/Highlights/Frame 48097097/Content/Frame 48096127/Frame 48096126/Main Content/23 August 2025",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "August was a hectic but rewarding month for Robotedge. At RoboCup Malaysia 2025 in Perlis, our team proudly secured First Place in the @Home Category, solidifying our position as one of Malaysia’s leading robotics teams. Building on this success, we’re thrilled to announce that Robotedge has been invited to the World Humanoid Robot Games 2025 in Beijing! This marks the beginning of our exciting journey into humanoid soccer competitions, expanding our focus beyond service robotics and into a whole new arena.",
+      "text": "August was a hectic but rewarding month for Robotedge. At RoboCup Malaysia 2025 in Perlis, our team proudly secured First Place in the @Home Category, solidifying our position as one of Malaysia’s leading robotics teams.\n\nBuilding on this success, we’re thrilled to announce that Robotedge has been invited to the World Humanoid Robot Games 2025 in Beijing! This marks the beginning of our exciting journey into humanoid soccer competitions, expanding our focus beyond service robotics and into a whole new arena.",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/News & Events/Highlights/Frame 48097097/Content/Frame 48096127/Frame 48096126/Main Content/August was a hectic but rewarding month for Robotedge. At RoboCup Malaysia 2025 in Perlis, our team proudly secured First Place in the @Home Category, solidifying our position as one of Malaysia’s leading robotics teams. Building on this success, we’re thrilled to announce that Robotedge has been invited to the World Humanoid Robot Games 2025 in Beijing! This marks the beginning of our exciting journey into humanoid soccer competitions, expanding our focus beyond service robotics and into a whole new arena.",
+      "nodeType": "TEXT"
+    },
+    {
+      "name": "🏆 First Place at RoboCup Malaysia @Home // Beijing Here We Come!",
+      "text": "🏆 First Place at RoboCup Malaysia @Home // Beijing Here We Come!",
+      "path": "Home/Frame 48097167/Frame 48097146/About Us/News & Events/Highlights/Frame 48097097/Content/Frame 48096127/Frame 48096126/Main Content/🏆 First Place at RoboCup Malaysia @Home // Beijing Here We Come!",
+      "nodeType": "TEXT"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: ${POSTGRES_DB:-robotedge_db}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-robotedge}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-robotedge123}
+      POSTGRES_DB: ${POSTGRES_DB:-robotedge_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-robotedge}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-robotedge123}
+      POSTGRES_DB: ${POSTGRES_DB:-robotedge_db}
+      DATABASE_URL: "postgresql://${POSTGRES_USER:-robotedge}:${POSTGRES_PASSWORD:-robotedge123}@db:5432/${POSTGRES_DB:-robotedge_db}?schema=public"
+      JWT_SECRET: ${JWT_SECRET:-robotedge_jwt_secret_key}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      STORAGE_DIR: /app/storage
+      NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL:-https://robotedge-um.github.io}
+    ports:
+      - "${PORT:-3000}:3000"
+    depends_on:
+      - db
+    volumes:
+      - ${STORAGE_DIR:-./storage}:/app/storage
+
+volumes:
+  postgres_data:
