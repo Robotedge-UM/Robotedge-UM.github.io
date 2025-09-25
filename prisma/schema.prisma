@@ -10,18 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Activity {
-  id            String       @id @default(cuid())
-  activityType  ActivityType
-  title         String
-  description   String
-  amount        Float?
-  seen          Boolean      @default(false)
-  userId        String
-  user          User         @relation("UserActivities", fields: [userId], references: [id], onDelete: Cascade)
-  createdAt     DateTime     @default(now())
-}
-
 model User {
   id               String       @id @default(cuid())
   name             String
@@ -33,21 +21,6 @@ model User {
   country          String?
   role             Role         @default(USER)
   isActive         Boolean      @default(true)
-  registrationTime DateTime?
-  
-  // Profile information for portfolio website
-  bio              String?
-  profileImage     String?
-  website          String?
-  github           String?
-  linkedin         String?
-  
-  activities        Activity[]         @relation("UserActivities")
-  
-  // Support Ticket Relations (kept for future use)
-  submittedTickets SupportTicket[] @relation("TicketSubmitter")
-  assignedTickets  SupportTicket[] @relation("TicketAssignee")
-  ticketReplies    TicketReply[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -57,148 +30,6 @@ enum Role {
   USER
   ADMIN
   SUPERADMIN
-}
-
-enum ActivityType {
-  REGISTRATION
-  ACCOUNT_UPDATED
-  LOGIN
-  TICKET_CREATED
-  TICKET_UPDATED
-  TICKET_RESOLVED
-  ADMIN_ACTION
-  PROFILE_UPDATED
-  PORTFOLIO_UPDATED
-}
-
-// Support Ticket System Models (kept for future use)
-enum TicketCategory {
-  ACCOUNT_ACCESS
-  SYSTEM_SUPPORT
-  GENERAL_INQUIRIES
-  PORTFOLIO_HELP
-}
-
-enum TicketPriority {
-  CRITICAL // 2-hour initial response
-  HIGH // 6-hour initial response
-  MEDIUM // 12-hour initial response
-  LOW // 24-hour initial response
-}
-
-enum TicketStatus {
-  OPEN
-  IN_PROGRESS
-  AWAITING_USER_RESPONSE
-  ESCALATED
-  RESOLVED
-  CLOSED
-}
-
-enum SupportTier {
-  TIER_1 // Front-line support
-  TIER_2 // Technical specialists
-  TIER_3 // Developer team
-}
-
-model SupportTicket {
-  id          String         @id @default(cuid())
-  title       String
-  description String
-  category    TicketCategory
-  priority    TicketPriority
-  status      TicketStatus   @default(OPEN)
-  tier        SupportTier    @default(TIER_1)
-
-  // Attachments as JSON array of URLs
-  attachments String[] @default([])
-
-  // Relations
-  submitterId String
-  submitter   User    @relation("TicketSubmitter", fields: [submitterId], references: [id], onDelete: Cascade)
-  assigneeId  String?
-  assignee    User?   @relation("TicketAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
-
-  // Support workflow tracking
-  initialResponseTime DateTime?
-  resolutionTime      DateTime?
-  lastUpdated         DateTime  @updatedAt
-
-  // Knowledge base article created from this ticket
-  knowledgeBaseId String?
-  knowledgeBase   KnowledgeBaseArticle? @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
-
-  // Ticket thread
-  replies TicketReply[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model TicketReply {
-  id          String   @id @default(cuid())
-  content     String
-  attachments String[] @default([])
-  isInternal  Boolean  @default(false) // For staff notes that users can't see
-
-  // Relations
-  ticketId String
-  ticket   SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
-  userId   String
-  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model KnowledgeBaseArticle {
-  id          String         @id @default(cuid())
-  title       String
-  content     String
-  category    TicketCategory
-  tags        String[]       @default([])
-  isPublished Boolean        @default(true)
-  viewCount   Int            @default(0)
-
-  // Related tickets
-  relatedTickets SupportTicket[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model SupportSettings {
-  id String @id @default(cuid())
-
-  // Response time targets (in hours)
-  criticalResponseTarget Float @default(2)
-  highResponseTarget     Float @default(6)
-  mediumResponseTarget   Float @default(12)
-  lowResponseTarget      Float @default(24)
-
-  // Auto-escalation settings (in hours)
-  autoEscalateAfter Float @default(24) // Escalate if no response after X hours
-
-  // Auto-assignment settings
-  enableAutoAssignment Boolean @default(true)
-
-  // Knowledge base settings
-  autoSuggestKnowledgeBase Boolean @default(true)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-// System Configuration Models
-model SystemConfig {
-  id              String  @id @default(cuid())
-  key             String  @unique
-  value           String
-  description     String?
-  category        String? // 'auth', 'general', etc.
-  isActive        Boolean @default(true)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
 }
 
 // Landing Page Customization Models (adapted for Robotedge)
@@ -327,6 +158,66 @@ model TeamMember {
   website     String?
   isActive    Boolean  @default(true)
   order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// New models for Home Page Content Management
+model HomeSection {
+  id        String      @id @default(cuid())
+  section   HomeSectionType
+  title     String?
+  subtitle  String?
+  content   String?     // JSON or HTML content
+  imageUrl  String?
+  order     Int         @default(0)
+  isActive  Boolean     @default(true)
+  metadata  Json?       // Additional metadata for flexible content
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  
+  @@unique([section])
+}
+
+enum HomeSectionType {
+  HERO
+  ABOUT
+  RESEARCH_INTRO
+  NEWS_EVENTS
+}
+
+model ResearchArea {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model NewsEvent {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  imageUrl    String?
+  date        DateTime
+  featured    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model MediaFile {
+  id          String   @id @default(cuid())
+  filename    String
+  originalName String
+  mimeType    String
+  size        Int
+  url         String
+  section     String?  // Which section this image belongs to
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

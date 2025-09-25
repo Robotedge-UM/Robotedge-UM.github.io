@@ -1,127 +1,144 @@
-const researchAreas = [
-  {
-    icon: "🤖",
-    title: "Service Robotics",
-    description:
-      "Developing autonomous robots for domestic and professional service applications",
-    topics: [
-      "Object recognition and manipulation",
-      "Navigation in complex environments",
-      "Human-robot interaction",
-      "Task planning and execution",
-    ],
-  },
-  {
-    icon: "👁️",
-    title: "Computer Vision",
-    description: "Advanced visual perception systems for robotic applications",
-    topics: [
-      "Real-time object detection",
-      "Scene understanding",
-      "Visual SLAM",
-      "3D perception and mapping",
-    ],
-  },
-  {
-    icon: "🎤",
-    title: "Speech Recognition",
-    description: "Natural language processing and voice interaction systems",
-    topics: [
-      "Voice command processing",
-      "Natural language understanding",
-      "Multilingual speech recognition",
-      "Conversational AI",
-    ],
-  },
-  {
-    icon: "🚶‍♂️",
-    title: "Humanoid Robotics",
-    description: "Bipedal locomotion and human-like robot behaviors",
-    topics: [
-      "Gait planning and control",
-      "Balance and stability",
-      "Soccer playing strategies",
-      "Dynamic motion planning",
-    ],
-  },
-]
+"use client"
+
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { HomeSectionType } from "@prisma/client"
+
+interface ResearchArea {
+  id: string
+  title: string
+  description?: string
+  imageUrl?: string
+  order: number
+}
+
+interface ResearchData {
+  title?: string
+  content?: string
+}
 
 export function ResearchSection() {
+  const [researchData, setResearchData] = useState<ResearchData>({
+    title: "Research Areas",
+    content: "Our research spans multiple domains in AI and robotics",
+  })
+  const [researchAreas, setResearchAreas] = useState<ResearchArea[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    fetchResearchData()
+    fetchResearchAreas()
+  }, [])
+
+  const fetchResearchData = async () => {
+    try {
+      const response = await fetch(
+        `/api/home/sections?section=${HomeSectionType.RESEARCH_INTRO}`
+      )
+      if (response.ok) {
+        const data = await response.json()
+        setResearchData({
+          title: data.title || researchData.title,
+          content: data.content || researchData.content,
+        })
+      }
+    } catch (error) {
+      console.error("Error fetching research data:", error)
+    }
+  }
+
+  const fetchResearchAreas = async () => {
+    try {
+      const response = await fetch("/api/home/research-areas")
+      if (response.ok) {
+        const data = await response.json()
+        setResearchAreas(data)
+      }
+    } catch (error) {
+      console.error("Error fetching research areas:", error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <section
       id="research"
-      className="py-20 bg-white"
+      className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Research</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {researchData.title}
+          </h2>
+          <div className="w-16 h-1 bg-teal-500 mx-auto mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Advancing Knowledge in AI and Robotics
+            {researchData.content}
           </p>
         </div>
 
-        {/* Research Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {researchAreas.map((area, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
-            >
-              <div className="text-center mb-6">
-                <div className="text-5xl mb-4">{area.icon}</div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  {area.title}
-                </h3>
-                <p className="text-gray-600 mb-6">{area.description}</p>
+        {/* Research Areas Grid */}
+        {!isLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {researchAreas.map((area) => (
+              <div
+                key={area.id}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <div className="aspect-[4/3] relative">
+                  {area.imageUrl ? (
+                    <Image
+                      src={area.imageUrl}
+                      alt={area.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="bg-gradient-to-br from-blue-100 to-teal-100 flex items-center justify-center h-full">
+                      <div className="text-center text-gray-500">
+                        <div className="text-4xl mb-2">🔬</div>
+                        <p className="text-sm">{area.title}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                  {/* Title overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                      {area.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {area.description && (
+                  <div className="p-6">
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {area.description}
+                    </p>
+                  </div>
+                )}
               </div>
-
-              <ul className="space-y-2">
-                {area.topics.map((topic, topicIndex) => (
-                  <li
-                    key={topicIndex}
-                    className="flex items-center text-gray-700"
-                  >
-                    <span className="text-teal-600 mr-3">▸</span>
-                    {topic}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Research Philosophy */}
-        <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h3 className="text-2xl font-semibold mb-6">
-            Our Research Philosophy
-          </h3>
-          <p className="text-lg text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            At Robotedge, we believe in <strong>EDGE</strong> principles that
-            guide our research:
-            <strong> Ethics</strong> in AI development,{" "}
-            <strong>Diversity</strong> in our team and approaches,
-            <strong>Green technology</strong> for sustainable solutions, and{" "}
-            <strong>Engagement</strong> with society to ensure our innovations
-            benefit everyone. Our research aims to create robots that not only
-            perform tasks efficiently but also contribute positively to human
-            well-being and environmental sustainability.
-          </p>
-        </div>
-
-        {/* Placeholder for Future Content */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-2xl p-12">
-            <div className="text-4xl mb-4">🔬</div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Research Portfolio
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Detailed information about our ongoing research projects,
-              methodologies, and findings will be updated here soon. Stay tuned
-              for exciting developments from our lab!
-            </p>
+            ))}
           </div>
-        </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg"
+              >
+                <div className="aspect-[4/3] bg-gray-200 animate-pulse" />
+                <div className="p-6">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse mb-2" />
+                  <div className="h-3 bg-gray-200 rounded animate-pulse w-3/4" />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

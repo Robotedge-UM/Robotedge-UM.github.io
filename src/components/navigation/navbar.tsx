@@ -137,7 +137,7 @@ export function Navbar({ onToggleSidebar }: NavbarProps) {
               ) : (
                 <Image
                   src="/android-chrome-192x192.png"
-                  alt={`${settings?.companyName || "ModularMLM"} Logo`}
+                  alt={`${settings?.companyName || "Robotedge"} Logo`}
                   width={50}
                   height={50}
                   className="dark:invert"
@@ -145,7 +145,7 @@ export function Navbar({ onToggleSidebar }: NavbarProps) {
               )}
             </div>
             <span className="text-xl font-bold text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">
-              {settings?.companyName || "Modular MLM"}
+              {settings?.companyName || "Robotedge"}
             </span>
           </Link>
 

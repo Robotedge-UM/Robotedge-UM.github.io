@@ -137,7 +137,7 @@ export function SignupContent({ referralUsername }: SignupContentProps) {
               >
                 <Image
                   src="/android-chrome-192x192.png"
-                  alt="ModularMLM Logo"
+                  alt="Robotedge Logo"
                   width={100}
                   height={100}
                   className="dark:invert"
@@ -150,7 +150,7 @@ export function SignupContent({ referralUsername }: SignupContentProps) {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mt-4 text-3xl font-bold text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text"
               >
-                Join ModularMLM
+                Join Robotedge
               </motion.h1>
 
               <motion.p

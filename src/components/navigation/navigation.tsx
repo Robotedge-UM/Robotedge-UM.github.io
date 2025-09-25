@@ -80,16 +80,13 @@ export function Navigation() {
               href="#home"
               className="flex items-center space-x-2"
             >
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/robotedge_logo_white_bg.png"
-                  alt="Robotedge AI Robotics Lab Logo - University of Malaya"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-xl font-bold text-gray-900">Robotedge</span>
+              <Image
+                src="/robotedge_logo_white_bg.png"
+                alt="Robotedge AI Robotics Lab Logo - University of Malaya"
+                width={200}
+                height={40}
+                className="object-contain h-10 w-auto"
+              />
             </Link>
           </div>
 

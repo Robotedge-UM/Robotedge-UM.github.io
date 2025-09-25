@@ -2,7 +2,7 @@ import { CustomizableFaqsContent } from "@/components/pages/customizable-faqs-co
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "FAQs - ModularMLM",
+  title: "FAQs - Robotedge",
   description:
     "Frequently asked questions about our MLM platform, packages, bonuses, and getting started.",
 }

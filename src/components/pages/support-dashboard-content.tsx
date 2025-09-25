@@ -256,7 +256,7 @@ export function SupportDashboardContent() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Support Center</h1>
         <p className="text-muted-foreground">
-          Get help with your {settings?.companyName || "ModularMLM"} account and
+          Get help with your {settings?.companyName || "Robotedge"} account and
           transactions
         </p>
       </div>

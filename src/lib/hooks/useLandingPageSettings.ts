@@ -47,18 +47,18 @@ export function useLandingPageSettings() {
         setError(err instanceof Error ? err.message : "An error occurred")
         // Use default settings on error
         const defaultSettings: LandingPageSettings = {
-          companyName: "ModularMLM",
+          companyName: "Robotedge",
           primaryColor: "#3B82F6",
           secondaryColor: "#10B981",
-          heroTitle: "ModularMLM",
+          heroTitle: "Robotedge",
           heroSubtitle:
             "Advanced multi-level marketing platform with binary tree structure, comprehensive package management, multiple bonus systems, and modular architecture that scales with your business.",
           activeMembersCount: "1000+",
           totalCommissions: "$500K+",
           memberSatisfaction: "95%",
-          metaTitle: "ModularMLM - Advanced Multi-Level Marketing System",
+          metaTitle: "Robotedge - Advanced Multi-Level Marketing System",
           metaDescription:
-            "A comprehensive modular MLM platform with binary tree structure, package management, bonus systems, and inventory tracking.",
+            "A comprehensive Robotedge platform with binary tree structure, package management, bonus systems, and inventory tracking.",
         }
         setSettings(defaultSettings)
         applyThemeColors(

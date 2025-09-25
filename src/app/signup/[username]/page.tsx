@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
     if (response.ok) {
       const settings = await response.json()
       return {
-        title: `Join Through Referral - ${settings.companyName || "ModularMLM"}`,
-        description: `Join ${settings.companyName || "ModularMLM"} through a referral and get optimal binary tree placement. Start building your network marketing business today.`,
+        title: `Join Through Referral - ${settings.companyName || "Robotedge"}`,
+        description: `Join ${settings.companyName || "Robotedge"} through a referral and get optimal binary tree placement. Start building your network marketing business today.`,
       }
     }
   } catch (error) {
@@ -25,9 +25,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: "Join Through Referral - ModularMLM",
+    title: "Join Through Referral - Robotedge",
     description:
-      "Join ModularMLM through a referral and get optimal binary tree placement. Start building your network marketing business today.",
+      "Join Robotedge through a referral and get optimal binary tree placement. Start building your network marketing business today.",
   }
 }
 

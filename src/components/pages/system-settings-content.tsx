@@ -12,7 +12,7 @@ export function SystemSettingsContent() {
         <div>
           <h1 className="text-3xl font-bold">System Settings</h1>
           <p className="text-muted-foreground">
-            Manage your Modular MLM system configuration
+            Manage your Robotedge system configuration
           </p>
         </div>
       </div>

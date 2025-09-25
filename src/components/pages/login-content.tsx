@@ -59,7 +59,7 @@ export function LoginContent() {
             >
               <Image
                 src={settings?.companyLogo || "/android-chrome-192x192.png"}
-                alt={`${settings?.companyName || "ModularMLM"} Logo`}
+                alt={`${settings?.companyName || "Robotedge"} Logo`}
                 width={100}
                 height={100}
                 className="dark:invert"
@@ -71,7 +71,7 @@ export function LoginContent() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-3xl font-bold text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text"
             >
-              Welcome to {settings?.companyName || "ModularMLM"}
+              Welcome to {settings?.companyName || "Robotedge"}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

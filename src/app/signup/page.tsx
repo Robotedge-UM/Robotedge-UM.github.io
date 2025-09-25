@@ -13,8 +13,8 @@ export async function generateMetadata(): Promise<Metadata> {
     if (response.ok) {
       const settings = await response.json()
       return {
-        title: `Join ${settings.companyName || "ModularMLM"} - Sign Up`,
-        description: `Join ${settings.companyName || "ModularMLM"} and start building your network marketing business with our advanced binary tree structure and comprehensive package system.`,
+        title: `Join ${settings.companyName || "Robotedge"} - Sign Up`,
+        description: `Join ${settings.companyName || "Robotedge"} and start building your network marketing business with our advanced binary tree structure and comprehensive package system.`,
       }
     }
   } catch (error) {
@@ -22,9 +22,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: "Join ModularMLM - Sign Up",
+    title: "Join Robotedge - Sign Up",
     description:
-      "Join ModularMLM and start building your network marketing business with our advanced binary tree structure and comprehensive package system.",
+      "Join Robotedge and start building your network marketing business with our advanced binary tree structure and comprehensive package system.",
   }
 }
 

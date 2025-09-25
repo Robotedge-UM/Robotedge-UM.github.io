@@ -174,7 +174,7 @@ export function CustomizableFaqsContent() {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               {heroContent?.subtitle ||
-                `Find answers to common questions about ${settings?.companyName || "ModularMLM"}, our packages, bonus systems, and how to get started.`}
+                `Find answers to common questions about ${settings?.companyName || "Robotedge"}, our packages, bonus systems, and how to get started.`}
             </p>
 
             {/* Search Bar */}
@@ -402,7 +402,7 @@ export function CustomizableFaqsContent() {
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Can't find what you're looking for? Our support team is here to
-              help you get started with {settings?.companyName || "ModularMLM"}.
+              help you get started with {settings?.companyName || "Robotedge"}.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               {settings?.supportEmail && (

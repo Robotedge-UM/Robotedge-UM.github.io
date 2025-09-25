@@ -2,10 +2,8 @@ import { Metadata } from "next"
 import { Navigation } from "@/components/navigation/navigation"
 import { HeroSection } from "@/components/sections/hero-section"
 import { AboutSection } from "@/components/sections/about-section"
-import { RoboCupSection } from "@/components/sections/robocup-section"
 import { ResearchSection } from "@/components/sections/research-section"
-import { PublicationsSection } from "@/components/sections/publications-section"
-import { IndustrialSection } from "@/components/sections/industrial-section"
+import { NewsEventsSection } from "@/components/sections/news-events-section"
 import { Footer } from "@/components/layouts/footer"
 
 export const metadata: Metadata = {
@@ -51,10 +49,8 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
-        <RoboCupSection />
         <ResearchSection />
-        <PublicationsSection />
-        <IndustrialSection />
+        <NewsEventsSection />
       </main>
       <Footer />
     </>
