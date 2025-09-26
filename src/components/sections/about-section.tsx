@@ -72,16 +72,16 @@ export function AboutSection() {
 
           {/* Content Section */}
           <div className="relative space-y-8">
-            {/* Large faded background text positioned behind the title */}
-            <div className="absolute z-0 pointer-events-none -top-8">
-              <div className="font-bold leading-none text-gray-100 select-none text-7xl lg:text-8xl ">
-                {aboutData.title}
-              </div>
-            </div>
             {!isLoading ? (
               <>
+                {/* Large faded background text positioned behind the title */}
+                <div className="absolute z-0 pointer-events-none -top-6 lg:-top-8">
+                  <div className="font-bold leading-none text-gray-100 select-none text-7xl lg:text-8xl ">
+                    {aboutData.title}
+                  </div>
+                </div>
                 <div className="relative z-10 space-y-6">
-                  <h2 className="relative z-10 mb-2 text-5xl font-bold text-gray-900 lg:text-6xl">
+                  <h2 className="relative z-10 mb-8 text-5xl font-bold text-gray-900 lg:text-6xl">
                     {aboutData.title}
                   </h2>
 

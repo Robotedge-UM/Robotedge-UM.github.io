@@ -14,16 +14,13 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/robotedge_logo_white_bg.png"
-                  alt="Robotedge AI Robotics Lab Logo"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-xl font-bold">Robotedge</span>
+              <Image
+                src="/robotedge_logo_black_bg.png"
+                alt="Robotedge AI Robotics Lab Logo"
+                width={300}
+                height={200}
+                className="object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Advancing the future of AI and robotics at the University of
@@ -151,7 +148,7 @@ export function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2025 Robotedge - University of Malaya. All rights reserved.
+              © 2025 Robotedge - Universiti Malaya. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
               <Link
