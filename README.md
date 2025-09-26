@@ -1,6 +1,6 @@
 # Robotedge - AI Robotics Lab Website
 
-Welcome to the official website of Robotedge, the AI Robotics Lab at University of Malaya.
+Welcome to the official website of Robotedge, the AI Robotics Lab at Universiti Malaya.
 
 ## About Robotedge
 
@@ -117,7 +117,7 @@ We welcome contributions from the community! Please read our contributing guidel
 
 - **Email**: umrobotedge@gmail.com
 - **Academic Supervisor**: Dr. Zati Hakim Azizul Hasan (zati@um.edu.my)
-- **Location**: Faculty of Computer Science and Information Technology, University of Malaya
+- **Location**: Faculty of Computer Science and Information Technology, Universiti Malaya
 
 ## License
 
@@ -125,4 +125,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-© 2025 Robotedge - University of Malaya. All rights reserved.
+© 2025 Robotedge - Universiti Malaya. All rights reserved.

@@ -11,16 +11,16 @@ datasource db {
 }
 
 model User {
-  id               String       @id @default(cuid())
-  name             String
-  email            String       @unique
-  password         String
-  phoneNumber      String?
-  address          String?
-  city             String?
-  country          String?
-  role             Role         @default(USER)
-  isActive         Boolean      @default(true)
+  id          String  @id @default(cuid())
+  name        String
+  email       String  @unique
+  password    String
+  phoneNumber String?
+  address     String?
+  city        String?
+  country     String?
+  role        Role    @default(USER)
+  isActive    Boolean @default(true)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -35,57 +35,64 @@ enum Role {
 // Landing Page Customization Models (adapted for Robotedge)
 model LandingPageSettings {
   id String @id @default(cuid())
-  
+
   // Company branding
-  companyName        String  @default("Robotedge")
-  companyLogo        String? // URL to logo image
-  primaryColor       String  @default("#1E4D72") // Robotedge blue
-  secondaryColor     String  @default("#00BCD4") // Robotedge teal
-  
+  companyName    String  @default("Robotedge")
+  companyLogo    String? // URL to logo image
+  primaryColor   String  @default("#1E4D72") // Robotedge blue
+  secondaryColor String  @default("#00BCD4") // Robotedge teal
+
   // Hero section
-  heroTitle          String  @default("Welcome to Robotedge")
-  heroSubtitle       String  @default("AI Robotics Lab of Universiti Malaya")
-  heroDescription    String  @default("Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and humanoid soccer, advancing ethical robotics guided by our EDGE principles: Ethics, Diversity, Green technology, and Engagement with society.")
-  heroImage          String? // URL to hero image/video
-  
+  heroTitle       String  @default("Welcome to Robotedge")
+  heroSubtitle    String  @default("AI Robotics Lab of Universiti Malaya")
+  heroDescription String  @default("Robotedge is the AI Robotics Lab of Universiti Malaya, led by Dr. Zati Hakim Azizul Hasan. We specialize in service robotics and humanoid soccer, advancing ethical robotics guided by our EDGE principles: Ethics, Diversity, Green technology, and Engagement with society.")
+  heroImage       String? // URL to hero image/video
+
   // Statistics
-  activeMembersCount String  @default("20+")
-  totalAchievements  String  @default("5+")
-  memberSatisfaction String  @default("100%")
-  
+  activeMembersCount String @default("20+")
+  totalAchievements  String @default("5+")
+  memberSatisfaction String @default("100%")
+
   // Contact information
-  contactEmail       String  @default("umrobotedge@gmail.com")
-  contactPhone       String?
-  supportEmail       String  @default("umrobotedge@gmail.com")
-  
+  contactEmail   String @default("umrobotedge@gmail.com")
+  contactPhone   String @default("+60 3-7967 4000")
+  supportEmail   String @default("umrobotedge@gmail.com")
+  contactAddress String @default("Faculty of Computer Science and Information Technology, Universiti Malaya, 50603 Kuala Lumpur, Malaysia")
+
   // Social media links
-  facebookUrl        String?
-  twitterUrl         String?
-  linkedinUrl        String?
-  instagramUrl       String?
-  
+  facebookUrl  String @default("https://www.facebook.com/robotedge.um")
+  twitterUrl   String @default("https://twitter.com/robotedge_um")
+  linkedinUrl  String @default("https://www.linkedin.com/company/robotedge")
+  instagramUrl String @default("https://www.instagram.com/robotedge.um")
+  emailUrl     String @default("mailto:umrobotedge@gmail.com")
+
+  // Map settings
+  mapEmbedUrl  String @default("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5099.150140323086!2d101.64811987595519!3d3.128218753278943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49720ec81b9b%3A0x58d63e7d8749e9d8!2sFaculty%20of%20Computer%20Science%20and%20Information%20Technology!5e1!3m2!1sen!2smy!4v1758859786038!5m2!1sen!2smy") // Google Maps embed URL
+  mapLatitude  Float? @default(3.1319) // UM coordinates
+  mapLongitude Float? @default(101.6553)
+
   // SEO settings
-  metaTitle          String  @default("Robotedge - AI Robotics Lab | University of Malaya")
-  metaDescription    String  @default("Robotedge AI Robotics Lab at University of Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.")
-  
-  isActive           Boolean @default(true)
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
+  metaTitle       String @default("Robotedge - AI Robotics Lab | Universiti Malaya")
+  metaDescription String @default("Robotedge AI Robotics Lab at Universiti Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.")
+
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model LandingPageContent {
-  id          String           @id @default(cuid())
-  page        LandingPageType  // HOME, ABOUT, ROBOCUP, RESEARCH, etc.
-  section     String           // e.g., "hero", "about", "robocup", "research"
-  title       String?
-  subtitle    String?
-  content     String?          // JSON or HTML content
-  imageUrl    String?
-  order       Int              @default(0) // For ordering sections
-  isActive    Boolean          @default(true)
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
-  
+  id        String          @id @default(cuid())
+  page      LandingPageType // HOME, ABOUT, ROBOCUP, RESEARCH, etc.
+  section   String // e.g., "hero", "about", "robocup", "research"
+  title     String?
+  subtitle  String?
+  content   String? // JSON or HTML content
+  imageUrl  String?
+  order     Int             @default(0) // For ordering sections
+  isActive  Boolean         @default(true)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
   @@unique([page, section])
 }
 
@@ -99,14 +106,14 @@ enum LandingPageType {
 }
 
 model FAQ {
-  id          String   @id @default(cuid())
-  question    String
-  answer      String   // Can contain HTML
-  category    String?  @default("General")
-  order       Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  question  String
+  answer    String // Can contain HTML
+  category  String?  @default("General")
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // Portfolio Models (for future portfolio functionality)
@@ -114,12 +121,12 @@ model Project {
   id          String   @id @default(cuid())
   title       String
   description String
-  content     String?  // Detailed description in markdown
+  content     String? // Detailed description in markdown
   imageUrl    String?
   demoUrl     String?
   githubUrl   String?
   tags        String[] @default([])
-  category    String?  // "RoboCup", "Research", "Academic", etc.
+  category    String? // "RoboCup", "Research", "Academic", etc.
   featured    Boolean  @default(false)
   order       Int      @default(0)
   isActive    Boolean  @default(true)
@@ -128,28 +135,28 @@ model Project {
 }
 
 model Publication {
-  id          String   @id @default(cuid())
-  title       String
-  authors     String[] @default([])
-  journal     String?
-  conference  String?
-  year        Int
-  abstract    String?
-  pdfUrl      String?
-  doi         String?
-  tags        String[] @default([])
-  category    String?  // "Journal", "Conference", "Workshop", etc.
-  featured    Boolean  @default(false)
-  order       Int      @default(0)
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(cuid())
+  title      String
+  authors    String[] @default([])
+  journal    String?
+  conference String?
+  year       Int
+  abstract   String?
+  pdfUrl     String?
+  doi        String?
+  tags       String[] @default([])
+  category   String? // "Journal", "Conference", "Workshop", etc.
+  featured   Boolean  @default(false)
+  order      Int      @default(0)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model TeamMember {
   id          String   @id @default(cuid())
   name        String
-  role        String   // "Academic Supervisor", "PhD Student", "Master Student", etc.
+  role        String // "Academic Supervisor", "PhD Student", "Master Student", etc.
   email       String?
   bio         String?
   imageUrl    String?
@@ -164,23 +171,23 @@ model TeamMember {
 
 // New models for Home Page Content Management
 model HomeSection {
-  id        String      @id @default(cuid())
-  section   HomeSectionType
-  title     String?
-  subtitle  String?
-  content   String?     // JSON or HTML content
-  imageUrl  String?
-  order     Int         @default(0)
-  isActive  Boolean     @default(true)
-  metadata  Json?       // Additional metadata for flexible content
+  id              String          @id @default(cuid())
+  section         HomeSectionType
+  title           String?
+  subtitle        String?
+  content         String? // JSON or HTML content
+  imageUrl        String?
+  order           Int             @default(0)
+  isActive        Boolean         @default(true)
+  metadata        Json? // Additional metadata for flexible content
   // Carousel settings
-  autoScrollDelay Int?    @default(8000) // Auto-scroll delay in milliseconds
-  showNavigation  Boolean @default(true)
-  showPagination  Boolean @default(true)
-  infiniteScroll  Boolean @default(true)
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-  
+  autoScrollDelay Int?            @default(8000) // Auto-scroll delay in milliseconds
+  showNavigation  Boolean         @default(true)
+  showPagination  Boolean         @default(true)
+  infiniteScroll  Boolean         @default(true)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
   @@unique([section])
 }
 
@@ -203,26 +210,26 @@ model ResearchArea {
 }
 
 model NewsEvent {
-  id          String   @id @default(cuid())
-  title       String
-  content     String
-  imageUrl    String?
-  date        DateTime
-  featured    Boolean  @default(false)
-  isActive    Boolean  @default(true)
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  imageUrl  String?
+  date      DateTime
+  featured  Boolean  @default(false)
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model MediaFile {
-  id          String   @id @default(cuid())
-  filename    String
+  id           String   @id @default(cuid())
+  filename     String
   originalName String
-  mimeType    String
-  size        Int
-  url         String
-  section     String?  // Which section this image belongs to
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  mimeType     String
+  size         Int
+  url          String
+  section      String? // Which section this image belongs to
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

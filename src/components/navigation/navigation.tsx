@@ -82,7 +82,7 @@ export function Navigation() {
             >
               <Image
                 src="/robotedge_logo_white_bg.png"
-                alt="Robotedge AI Robotics Lab Logo - University of Malaya"
+                alt="Robotedge AI Robotics Lab Logo - Universiti Malaya"
                 width={200}
                 height={40}
                 className="object-contain h-10 w-auto"

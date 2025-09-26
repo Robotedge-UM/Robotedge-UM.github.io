@@ -7,17 +7,17 @@ import { NewsEventsSection } from "@/components/sections/news-events-section"
 import { Footer } from "@/components/layouts/footer"
 
 export const metadata: Metadata = {
-  title: "Robotedge - AI Robotics Lab | University of Malaya",
+  title: "Robotedge - AI Robotics Lab | Universiti Malaya",
   description:
-    "Robotedge AI Robotics Lab at University of Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.",
+    "Robotedge AI Robotics Lab at Universiti Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.",
   keywords:
-    "robotics, artificial intelligence, University of Malaya, RoboCup, humanoid soccer, service robotics, AI research, STEM education, robot competitions, Malaysia robotics",
+    "robotics, artificial intelligence, Universiti Malaya, RoboCup, humanoid soccer, service robotics, AI research, STEM education, robot competitions, Malaysia robotics",
   authors: [{ name: "Dr. Zati Hakim Azizul Hasan" }],
   robots: "index, follow",
   openGraph: {
-    title: "Robotedge - AI Robotics Lab | University of Malaya",
+    title: "Robotedge - AI Robotics Lab | Universiti Malaya",
     description:
-      "Robotedge AI Robotics Lab at University of Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.",
+      "Robotedge AI Robotics Lab at Universiti Malaya. RoboCup champions in service robotics & humanoid soccer. Led by Dr. Zati Hakim Azizul Hasan.",
     url: "https://robotedge-um.github.io/",
     siteName: "Robotedge",
     images: [
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Robotedge - AI Robotics Lab | University of Malaya",
+    title: "Robotedge - AI Robotics Lab | Universiti Malaya",
     description:
-      "AI Robotics Lab specializing in service robotics and humanoid soccer at University of Malaya. RoboCup champions advancing ethical robotics.",
+      "AI Robotics Lab specializing in service robotics and humanoid soccer at Universiti Malaya. RoboCup champions advancing ethical robotics.",
     images: ["/robotedge_logo_white_bg.png"],
     site: "@robotedge_um",
     creator: "@robotedge_um",

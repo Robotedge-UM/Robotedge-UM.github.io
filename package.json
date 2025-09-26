@@ -2,7 +2,7 @@
   "name": "robotedge-website",
   "version": "0.1.0",
   "private": true,
-  "description": "Robotedge AI Robotics Lab website - University of Malaya. Showcasing our achievements in RoboCup competitions, research in service robotics and humanoid soccer.",
+  "description": "Robotedge AI Robotics Lab website - Universiti Malaya. Showcasing our achievements in RoboCup competitions, research in service robotics and humanoid soccer.",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

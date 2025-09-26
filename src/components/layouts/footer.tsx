@@ -2,164 +2,190 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import {
+  Mail,
+  Facebook,
+  Linkedin,
+  Instagram,
+  MapPin,
+  FacebookIcon,
+} from "lucide-react"
+import { useFooterData } from "@/hooks/use-footer-data"
 
 export function Footer() {
+  const { footerData } = useFooterData()
   return (
     <footer
-      className="bg-gray-900 text-white py-16"
+      className="py-16 text-white bg-black"
       role="contentinfo"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Logo and Description */}
-          <div className="md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Left Column - Logo, Description & Social Media */}
+          <div>
+            <div className="flex items-center mb-6 space-x-3">
               <Image
-                src="/robotedge_logo_black_bg.png"
-                alt="Robotedge AI Robotics Lab Logo"
+                src={footerData.companyLogo}
+                alt={`${footerData.companyName} Logo`}
                 width={300}
                 height={200}
                 className="object-contain"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Advancing the future of AI and robotics at the University of
-              Malaya.
+
+            <p className="mb-6 text-sm leading-relaxed text-gray-300">
+              Advancing the future of AI and robotics at Universiti Malaya.
             </p>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("home")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
+            {/* Social Media Icons */}
+            <div className="flex space-x-4">
+              <a
+                href={footerData.emailUrl}
+                className="flex items-center justify-center p-2 rounded-full hover:bg-gray-700"
+                aria-label="Email"
+              >
+                <Image
+                  src="/icons/mail.svg"
+                  alt="Email Icon"
+                  width={20}
+                  height={20}
+                  className="object-contain w-5 h-5"
+                />
+              </a>
+              {footerData.facebookUrl && (
+                <a
+                  href={footerData.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-2 rounded-full hover:bg-gray-700"
+                  aria-label="Facebook"
                 >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
+                  <Image
+                    src="/icons/facebook.svg"
+                    alt="Facebook Icon"
+                    width={20}
+                    height={20}
+                    className="object-contain w-5 h-5"
+                  />
+                </a>
+              )}
+              {footerData.linkedinUrl && (
+                <a
+                  href={footerData.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-2 rounded-full hover:bg-gray-700"
+                  aria-label="LinkedIn"
                 >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("robocup")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
+                  <Image
+                    src="/icons/linkedin.svg"
+                    alt="LinkedIn Icon"
+                    width={20}
+                    height={20}
+                    className="object-contain w-5 h-5"
+                  />
+                </a>
+              )}
+              {footerData.instagramUrl && (
+                <a
+                  href={footerData.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-2 rounded-full hover:bg-gray-700"
+                  aria-label="Instagram"
                 >
-                  RoboCup
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("research")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Research
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("publications")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Publications
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("industrial")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Industrial Applications
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>umrobotedge@gmail.com</p>
-              <p>zati@um.edu.my</p>
-              <p>+60 3-7967 4000</p>
-              <p>University of Malaya</p>
-              <p>50603 Kuala Lumpur, Malaysia</p>
+                  <Image
+                    src="/icons/instagram.svg"
+                    alt="Instagram Icon"
+                    width={20}
+                    height={20}
+                    className="object-contain w-5 h-5"
+                  />
+                </a>
+              )}
             </div>
           </div>
 
-          {/* Social Media & University */}
+          {/* Middle Column - Contact Information */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>Instagram: Coming soon!</p>
-              <Link
-                href="https://www.um.edu.my/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-white transition-colors"
-              >
-                University of Malaya
-              </Link>
-              <Link
-                href="https://robotedge-um.github.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-white transition-colors"
-              >
-                GitHub Repository
-              </Link>
+            <h4 className="mb-6 text-lg font-semibold text-white">Contact</h4>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Image
+                  src="/icons/mail.svg"
+                  alt="Email Icon"
+                  width={20}
+                  height={20}
+                  className="object-contain w-5 h-5"
+                />
+                <div className="text-sm text-gray-300">
+                  <p>{footerData.contactEmail}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Image
+                  src="/icons/marker.svg"
+                  alt="Location Icon"
+                  width={20}
+                  height={20}
+                  className="object-contain w-5 h-5"
+                />
+                <div className="text-sm text-gray-300">
+                  <p>{footerData.contactAddress}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Maps Location */}
+          <div>
+            <h4 className="mb-6 text-lg font-semibold text-white">
+              Maps Location
+            </h4>
+            <div className="relative">
+              {footerData.mapEmbedUrl ? (
+                <iframe
+                  src={footerData.mapEmbedUrl}
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg"
+                ></iframe>
+              ) : (
+                <div className="flex items-center justify-center w-full h-48 bg-gray-800 rounded-lg">
+                  <div className="text-center">
+                    <MapPin className="w-8 h-8 mx-auto mb-2 text-cyan-400" />
+                    <p className="text-sm text-gray-400">Universiti Malaya</p>
+                    <p className="text-xs text-gray-500">
+                      Kuala Lumpur, Malaysia
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © 2025 Robotedge - Universiti Malaya. All rights reserved.
+        <div className="pt-8 mt-12 border-t border-gray-800">
+          <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+            <p className="text-sm text-gray-400">
+              © 2025 {footerData.companyName}
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
               <Link
                 href="/login"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
                 Login
               </Link>
               <Link
                 href="/signup"
-                className="hover:text-white transition-colors"
+                className="transition-colors hover:text-white"
               >
                 Sign Up
               </Link>
