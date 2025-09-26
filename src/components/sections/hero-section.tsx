@@ -67,12 +67,12 @@ export function HeroSection() {
         <div className="w-full px-6 py-20 mx-auto max-w-7xl lg:px-8">
           <div className="grid grid-cols-12 gap-8 items-center min-h-[600px]">
             {/* Left Content - Text (centered and positioned better) */}
-            <div className="flex flex-col justify-center col-span-12 space-y-6 lg:col-span-6">
+            <div className="flex flex-col justify-center col-span-12 space-y-6 lg:col-span-5">
               {!isLoading && (
                 <>
                   {/* Main Title - Smaller size */}
                   <div className="space-y-3">
-                    <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white tracking-tight">
+                    <h1 className="text-4xl md:text-5xl xl:text-5xl font-bold text-white tracking-tight">
                       <span className="block">
                         "BUILDING ROBOTS WITH EDGE –
                       </span>
@@ -81,13 +81,11 @@ export function HeroSection() {
 
                   {/* EDGE Subtitle */}
                   <div className="space-y-1">
-                    <h2 className="text-4xl font-bold leading-tighter tracking-wider md:text-5xl xl:text-6xl">
-                      <span className="block text-teal-300">
-                        ETHICS. DIVERSITY.
-                      </span>
-                      <span className="block text-teal-300">
-                        GREEN. ENGAGEMENT."
-                      </span>
+                    <h2 className="text-4xl font-bold leading-tighter tracking-wider md:text-5xl lg:text-5xl">
+                      <span className="block text-teal-300">ETHICS.</span>
+                      <span className="block text-teal-300">DIVERSITY.</span>
+                      <span className="block text-teal-300">GREEN."</span>
+                      <span className="block text-teal-300">ENGAGEMENT.</span>
                     </h2>
                   </div>
 

@@ -1,16 +1,9 @@
 "use client"
 
+import { useFooterData } from "@/hooks/use-footer-data"
+import { MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  Mail,
-  Facebook,
-  Linkedin,
-  Instagram,
-  MapPin,
-  FacebookIcon,
-} from "lucide-react"
-import { useFooterData } from "@/hooks/use-footer-data"
 
 export function Footer() {
   const { footerData } = useFooterData()
@@ -118,8 +111,10 @@ export function Footer() {
                   height={20}
                   className="object-contain w-5 h-5"
                 />
-                <div className="text-sm text-gray-300">
-                  <p>{footerData.contactEmail}</p>
+                <div className="text-sm text-gray-300 hover:text-blue-300">
+                  <a href={`mailto:${footerData.contactEmail}`}>
+                    {footerData.contactEmail}
+                  </a>
                 </div>
               </div>
 
@@ -131,8 +126,16 @@ export function Footer() {
                   height={20}
                   className="object-contain w-5 h-5"
                 />
-                <div className="text-sm text-gray-300">
-                  <p>{footerData.contactAddress}</p>
+                <div className="text-sm text-gray-300 hover:text-blue-300">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      footerData.contactAddress
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {footerData.contactAddress}
+                  </a>
                 </div>
               </div>
             </div>
